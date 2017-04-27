@@ -12,6 +12,9 @@
 </head>
 <body>
     <header>
+        <ul class="logo">
+            <li><a href="/index.aspx"><h2>FEEDBACK</h2></a></li>
+        </ul>
         <ul>
             <li><a href="#">Sign Up</a></li>
             <li><a href="#">Log In</a></li>

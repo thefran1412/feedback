@@ -6,6 +6,5 @@
 </asp:Content>
 
 <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
-    hola
+    esto es la landing page
 </asp:Content>
-

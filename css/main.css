@@ -36,3 +36,9 @@ a {
     color: white;
     text-decoration: none;
 }
+
+.logo{
+    position: absolute;
+    line-height: 10px;
+    left: 0;
+}
