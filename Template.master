@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>feedback</title>
+    <link rel="stylesheet" href="css/main.css">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+        </ul>
+    </header>
+    <div class="content">
+        <asp:ContentPlaceHolder id="content" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

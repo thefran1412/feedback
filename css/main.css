@@ -1,0 +1,38 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(to left, #1e5799, #7db9e8);
+    top: 0;
+}
+
+.content {
+    color: #303030;
+    margin-top: 50px;
+}
+
+header ul {
+    position: absolute;
+    right: 0;
+}
+
+header li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+    line-height: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
