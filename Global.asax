@@ -13,7 +13,9 @@
     public static void RegisterRoutes(RouteCollection routes)
     {
         routes.MapPageRoute("", "", "~/index.aspx");
-
+    
+        // forgot
+        routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
         // entity
         routes.MapPageRoute("", "entity/index", "~/entity/index.aspx");
