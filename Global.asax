@@ -12,9 +12,40 @@
     // AQUI SE PONEN LAS RUTAS
     public static void RegisterRoutes(RouteCollection routes)
     {
-        routes.MapPageRoute("", "entity/{id}", "~/entity/detail.aspx");
-        routes.MapPageRoute("", "entity/", "~/entity/detail.aspx");
-        routes.MapPageRoute("", "contact", "~/entity/detail.aspx");
+        routes.MapPageRoute("", "", "~/index.aspx");
+
+
+        // entity
+        routes.MapPageRoute("", "entity/index", "~/entity/index.aspx");
+        routes.MapPageRoute("", "entity/index/{id}", "~/entity/index.aspx");
+
+        // entity view
+        routes.MapPageRoute("", "entity/view", "~/entity/view.aspx");
+        routes.MapPageRoute("", "entity/view/{id}", "~/entity/view.aspx");
+
+        // form
+        routes.MapPageRoute("", "form/index", "~/form/index.aspx");
+        routes.MapPageRoute("", "form/index/{id}", "~/form/index.aspx");
+
+        // form view
+        routes.MapPageRoute("", "form/view", "~/form/view.aspx");
+        routes.MapPageRoute("", "form/view/{id}", "~/form/view.aspx");
+
+        // form add
+        routes.MapPageRoute("", "form/add", "~/form/add.aspx");
+        routes.MapPageRoute("", "form/add/{id}", "~/form/add.aspx");
+
+        // form edit
+        routes.MapPageRoute("", "form/edit", "~/form/edit.aspx");
+        routes.MapPageRoute("", "form/edit/{id}", "~/form/edit.aspx");
+
+ 
+
+
+
+
+        
+        routes.MapPageRoute("", "form", "~/form/index.aspx");
     }
 
     void Application_End(object sender, EventArgs e)
