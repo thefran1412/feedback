@@ -6,7 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>feedback</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="css/modal.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,13 +18,31 @@
         </ul>
         <ul>
             <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a id="myBtn" href="#">Log In</a></li>
         </ul>
     </header>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+          <h3>Modal Footer</h3>
+        </div>
+      </div>
+     </div>
     <div class="content">
         <asp:ContentPlaceHolder id="content" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
+    <script src="js/modal.js"></script>
 </body>
 </html>
