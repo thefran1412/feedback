@@ -42,6 +42,8 @@
         routes.MapPageRoute("", "form/edit/{id}", "~/form/edit.aspx");
 
  
+        // configuration
+        routes.MapPageRoute("", "configuration", "~/config.aspx");
 
 
 
