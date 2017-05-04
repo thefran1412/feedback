@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Template" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -89,6 +91,7 @@
     <script src="js/modal.js"></script>
 </body>
 </html>
+<<<<<<< HEAD
 <%      SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
        + "Initial Catalog=feedback;"
        + "Persist Security Info=True;"
@@ -115,3 +118,5 @@
     reader.Close();
     conn.Close();
 %>
+=======
+>>>>>>> d166405a9f68219c5e72abe2138972ef4882298f
