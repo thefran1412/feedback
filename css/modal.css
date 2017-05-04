@@ -77,6 +77,8 @@
 
 .modal-body {
     padding: 2px 16px;
+    text-align:center;
+    color:blue;
 }
 
 .modal-footer {
@@ -84,3 +86,5 @@
     background-color: #5cb85c;
     color: white;
 }
+
+
