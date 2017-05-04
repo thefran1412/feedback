@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Template" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -28,29 +30,3 @@
     </div>
 </body>
 </html>
-<%      SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
-       + "Initial Catalog=feedback;"
-       + "Persist Security Info=True;"
-       + "User ID=nicofviteri;Password=piZzarra1617");
-
-    conn.Open();
-
-    // create a SqlCommand object for this connection
-    SqlCommand command = conn.CreateCommand();
-    command.CommandText = "Select * from users";
-    command.CommandType = CommandType.Text;
-
-    // execute the command that returns a SqlDataReader
-    SqlDataReader reader = command.ExecuteReader();
-
-    // display the results
-    var employeesLabel = "";
-    while (reader.Read()) {
-        //whatever you want to do.
-        employeesLabel += reader["Name"] + "<br />";
-    }
-
-    // close the connection
-    reader.Close();
-    conn.Close();
-%>
