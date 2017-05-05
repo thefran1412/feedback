@@ -6,5 +6,11 @@
 
 <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
     esto es la landing page
-    <%adios %>
+    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="dati">
+    
+    </asp:Repeater>
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server">
+
+    </asp:SqlDataSource>
 </asp:Content>
