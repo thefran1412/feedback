@@ -18,12 +18,12 @@
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
         // entity
-        routes.MapPageRoute("", "entity/index", "~/entity/index.aspx");
-        routes.MapPageRoute("", "entity/index/{id}", "~/entity/index.aspx");
+        routes.MapPageRoute("", "folder/index", "~/entity/index.aspx");
+        routes.MapPageRoute("", "folder/index/{id}", "~/entity/index.aspx");
 
         // entity view
-        routes.MapPageRoute("", "entity/view", "~/entity/view.aspx");
-        routes.MapPageRoute("", "entity/view/{id}", "~/entity/view.aspx");
+        routes.MapPageRoute("", "folder/view", "~/entity/view.aspx");
+        routes.MapPageRoute("", "folder/view/{id}", "~/entity/view.aspx");
 
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
