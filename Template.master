@@ -91,32 +91,3 @@
     <script src="js/modal.js"></script>
 </body>
 </html>
-<<<<<<< HEAD
-<%      SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
-       + "Initial Catalog=feedback;"
-       + "Persist Security Info=True;"
-       + "User ID=admin123;Password=piZzarra1617");
-
-    conn.Open();
-
-    // create a SqlCommand object for this connection
-    SqlCommand command = conn.CreateCommand();
-    command.CommandText = "Select * from forms";
-    command.CommandType = CommandType.Text;
-
-    // execute the command that returns a SqlDataReader
-    SqlDataReader reader = command.ExecuteReader();
-
-    // display the results
-    var employeesLabel = "";
-    while (reader.Read()) {
-        //whatever you want to do.
-        employeesLabel += reader["Name"] + "<br />";
-    }
-
-    // close the connection
-    reader.Close();
-    conn.Close();
-%>
-=======
->>>>>>> d166405a9f68219c5e72abe2138972ef4882298f
