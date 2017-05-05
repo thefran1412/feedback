@@ -6,11 +6,10 @@
 
 <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
     esto es la landing page
-    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="dati">
+    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
     
     </asp:Repeater>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server">
-
-    </asp:SqlDataSource>
+     <asp:SqlDataSource ConnectionString="<%$ ConnectionStrings:asd %>" ID="SqlDataSource1" runat="server" SelectCommand="SELECT * FROM users">
+      </asp:SqlDataSource>
 </asp:Content>

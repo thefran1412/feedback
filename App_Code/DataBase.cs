@@ -1,39 +1,30 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-/// <summary>
-/// Descripción breve de DataBase
-/// </summary>
-public class DataBase
+
+public partial class DataBase
 {
-    public DataBase()
+    SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
+        + "Initial Catalog=feedback;"
+        + "Persist Security Info=True;"
+        + "User ID=admin123;Password=piZzarra1617");
+
+    public Object getData(string query)
     {
-        //
-        // TODO: Agregar aquí la lógica del constructor
-        //
-        SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
-         + "Initial Catalog=feedback;"
-         + "Persist Security Info=True;"
-         + "User ID=admin123;Password=piZzarra1617");
-
-        string sql = null;
-
         conn.Open();
+        SqlCommand cmd = new SqlCommand(query, conn);
 
-        // create a SqlCommand object for this connection
-        SqlCommand command = conn.CreateCommand();
-        sql = "Select * from users where users.email=" + '"' + UserEmail.Text + '"';
+        DataSet ds = new DataSet();
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        // execute the command that returns a SqlDataReader
-        SqlDataReader reader = command.ExecuteReader();
-
-        // close the connection
-        reader.Close();
+        da.Fill(ds);
         conn.Close();
 
+        return ds;
     }
 }

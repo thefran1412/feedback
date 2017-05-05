@@ -11,21 +11,13 @@ using System.Web.UI.WebControls;
 public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-<<<<<<< HEAD
     {
+        /*DataBase obj = new DataBase();
+        obj.getData("select * from users");
+        Repeater1.DataSource() = obj;
+        Repeater1.DataBind();
 
-        string query = "select * from users";
-        dadesNico.Class1 dades = new dadesNico.Class1();
-        DataSet hola = dades.downloadData(query);
+        var adios = hola.Tables["dades"];*/
 
-        var adios = hola.Tables["dades"];
-
-=======
-    {   
-        sqlCommand cmd = 
-        dadesNico.Class1 dades = new dadesNico.Class1();
-        DataSet ds = dades.downloadData("select * from users");
-        SqlDataAdapter da = new SqlDataAdapter()
->>>>>>> 799e7ed5b0041e9ed30d1f70ec33d7950c36329b
     }
 }
