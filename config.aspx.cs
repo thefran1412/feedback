@@ -9,6 +9,6 @@ public partial class config : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Welcome.Text = "Hello, " + Session["name"];
     }
 }

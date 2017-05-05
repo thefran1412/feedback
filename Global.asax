@@ -13,7 +13,7 @@
     public static void RegisterRoutes(RouteCollection routes)
     {
         routes.MapPageRoute("", "", "~/index.aspx");
-    
+
         // forgot
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
@@ -41,14 +41,14 @@
         routes.MapPageRoute("", "form/edit", "~/form/edit.aspx");
         routes.MapPageRoute("", "form/edit/{id}", "~/form/edit.aspx");
 
- 
+
         // configuration
         routes.MapPageRoute("", "configuration", "~/config.aspx");
 
 
 
 
-        
+
         routes.MapPageRoute("", "form", "~/form/index.aspx");
     }
 
