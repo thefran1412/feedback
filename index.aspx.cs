@@ -10,14 +10,10 @@ public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-<<<<<<< HEAD
-       
-=======
         string query = "select * from users";
         dadesNico.Class1 dades = new dadesNico.Class1();
         DataSet hola = dades.downloadData(query);
 
         var adios = hola.Tables["dades"];
->>>>>>> d166405a9f68219c5e72abe2138972ef4882298f
     }
 }
