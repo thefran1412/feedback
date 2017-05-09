@@ -17,7 +17,8 @@
         </ItemTemplate>
      </asp:Repeater>
 
-     <asp:SqlDataSource ConnectionString="<%$ ConnectionStrings:connection %>" ID="SqlDataSource1" runat="server" SelectCommand="SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = <%$Request.QueryString["id"]%>">
+     <asp:SqlDataSource ConnectionString="<%$ ConnectionStrings:connection %>" ID="SqlDataSource1" runat="server" SelectCommand="SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = 1">
+         <%--<%$Request.QueryString["id"]%>--%>
       </asp:SqlDataSource>
 </asp:Content>
 
