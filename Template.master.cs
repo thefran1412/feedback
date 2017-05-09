@@ -20,11 +20,22 @@ public partial class Template : System.Web.UI.MasterPage
 
         string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
-        string query = "SELECT * FROM users WHERE users.email=" + '"' + UserEmail.Text + '"';
+        string query = "SELECT * FROM users WHERE email = '" + UserEmail.Text +"'";
 
 
         SqlCommand cmd = new SqlCommand(query, con);
-
+        DataSet ds = new DataSet();
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        using (SqlDataReader reader = cmd.ExecuteReader())
+        {
+            if (reader.Read())
+            {
+                Console.WriteLine(String.Format("{0}", reader["email"]));
+            }
+        }
+        da.Fill(ds);
+        con.Close();
+        var table = ds.Tables["Table"].Rows;
         if ((UserEmail.Text == "a@b.com") &&
                 (UserPass.Text == "123"))
         {
