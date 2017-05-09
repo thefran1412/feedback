@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Configuration;
 
 public partial class Template : System.Web.UI.MasterPage
 {
@@ -17,8 +18,12 @@ public partial class Template : System.Web.UI.MasterPage
     public void Logon_Click(object sender, EventArgs e)
     {
 
-        
+        //string constr = ConfigurationManager.ConnectionStrings["asd"].ConnectionString;
+        //SqlConnection con = new SqlConnection(constr);
+        //string query = "SELECT * FROM users WHERE users.email=" + '"' + UserEmail.Text + '"';
 
+
+        //SqlCommand cmd = new SqlCommand(query, con);
 
         if ((UserEmail.Text == "a@b.com") &&
                 (UserPass.Text == "123"))
