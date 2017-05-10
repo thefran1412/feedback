@@ -17,74 +17,13 @@
             <li><a href="/index.aspx"><h2>FEEDBACK</h2></a></li>
         </ul>
         <ul>
-            <li><a href="#">Sign Up</a></li>
-            <li><a id="myBtn" href="#">Log In</a></li>
+            <li><a href="/register">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
         </ul>
     </header>
-    <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Modal Header</h2>
-        </div>
-        <div class="modal-body">
- <form id="form1" runat="server">
-    <h3>
-      Logon Page</h3>
-    <table>
-      <tr>
-        <td>
-          E-mail address:</td>
-        <td>
-          <asp:TextBox ID="UserEmail" runat="server" /></td>
-        <td>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-            ControlToValidate="UserEmail"
-            Display="Dynamic" 
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Password:</td>
-        <td>
-          <asp:TextBox ID="UserPass" TextMode="Password" 
-             runat="server" />
-        </td>
-        <td>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
-            ControlToValidate="UserPass"
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Remember me?</td>
-        <td>
-          <asp:CheckBox ID="Persist" runat="server" /></td>
-      </tr>
-    </table>
-    <asp:Button ID="Button1" OnClick="Logon_Click" Text="Log On" 
-       runat="server" />
-    <p>
-      <asp:Label ID="Msg" ForeColor="red" runat="server" />
-    </p>
-  </form>
-        </div>
-        <div class="modal-footer">
-          <h3>Modal Footer</h3>
-        </div>
-      </div>
-     </div>
-    <div class="content">
-        <asp:ContentPlaceHolder id="content" runat="server">
+    <asp:ContentPlaceHolder id="content" runat="server">
             
-        </asp:ContentPlaceHolder>
-    </div>
-    <script src="js/modal.js"></script>
+    </asp:ContentPlaceHolder>
+ 
 </body>
 </html>
