@@ -33,6 +33,7 @@ public partial class login_Default : System.Web.UI.Page
         if (ds.Tables[0].Rows.Count > 0)
         {
             Msg.Text = "Data ok";
+            object hol = ds.Tables[0].Rows[0].ItemArray;
         }
         else
         {
