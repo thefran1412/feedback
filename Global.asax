@@ -24,12 +24,12 @@
         routes.MapPageRoute("register", "register", "~/login/register.aspx");
 
         // entity
-        routes.MapPageRoute("", "folder/index", "~/entity/index.aspx");
-        routes.MapPageRoute("", "folder/index/{id}", "~/entity/index.aspx");
+        routes.MapPageRoute("", "folder/index", "~/folders/index.aspx");
+        routes.MapPageRoute("", "folder/index/{id}", "~/folders/index.aspx");
 
         // entity view
-        routes.MapPageRoute("", "folder/view", "~/entity/view.aspx");
-        routes.MapPageRoute("", "folder/view/{id}", "~/entity/view.aspx");
+        routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
+        routes.MapPageRoute("", "folder/view/{id}", "~/folders/view.aspx");
 
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
