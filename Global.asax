@@ -18,10 +18,10 @@
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
         //login
-        routes.MapPageRoute("login", "login", "~/login/login.aspx");
+        routes.MapPageRoute("login", "login", "~/auth/login.aspx");
 
         //register
-        routes.MapPageRoute("register", "register", "~/login/register.aspx");
+        routes.MapPageRoute("register", "register", "~/auth/register.aspx");
 
         // entity
         routes.MapPageRoute("", "folder/index", "~/folders/index.aspx");

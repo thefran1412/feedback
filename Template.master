@@ -21,9 +21,10 @@
             <li><a href="/login">Log In</a></li>
         </ul>
     </header>
-    <asp:ContentPlaceHolder id="content" runat="server">
-            
-    </asp:ContentPlaceHolder>
- 
+    <div class="content">
+            <asp:ContentPlaceHolder id="content" runat="server">
+            </asp:ContentPlaceHolder>
+    </div>
+    
 </body>
 </html>
