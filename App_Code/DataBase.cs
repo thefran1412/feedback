@@ -1,30 +1,31 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.SqlClient;
 
-
-public partial class DataBase
+namespace db
 {
-    SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
-        + "Initial Catalog=feedback;"
-        + "Persist Security Info=True;"
-        + "User ID=admin123;Password=piZzarra1617");
-
-    public Object getData(string query)
+    public class Base
     {
-        conn.Open();
-        SqlCommand cmd = new SqlCommand(query, conn);
+        SqlConnection conn = new SqlConnection("Data Source=serverfeedback.database.windows.net;"
+            + "Initial Catalog=feedback;"
+            + "Persist Security Info=True;"
+            + "User ID=admin123;Password=piZzarra1617");
 
-        DataSet ds = new DataSet();
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        public DataSet getData(string query)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
 
-        da.Fill(ds);
-        conn.Close();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        return ds;
+            da.Fill(ds);
+            conn.Close();
+
+            return ds;
+        }
     }
 }

@@ -6,37 +6,32 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using db;
+using per;
 
 public partial class entity_view : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        // getting variable from url
         var hash = Page.RouteData.Values["hash"];
-        if (hash == null)
-        {
-            if (Session["url"] == null)
-            {
-                Response.Redirect("/");
-            }
-            else
-            {
-                Response.Redirect(Session["url"].ToString());
-            }
-        }
-        else
-        {
-            Session["url"] = Request.Url.ToString();
-        }
+        var query = "";
 
-        var query = "SELECT fo.* FROM folders f, forms fo WHERE f.id = fo.folder_id AND f.hash = '" + hash + "'";
+        // first query
+        query = "SELECT * FROM folders WHERE hash = '" + hash + "'";
+        Base conn = new Base();
+        DataSet first = conn.getData(query);
 
-        SqlConnection con = new SqlConnection("Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;");
-        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+        // if there's an entry stay in page and continue, else go to page before this
+        Permissions p = new Permissions();
+        p.set(first.Tables[0].Rows.Count, Request.Url.ToString());
+        
+        // second query
+        query = "SELECT fo.* FROM folders f, forms fo WHERE f.id = fo.folder_id AND f.hash = '" + hash + "'";
+        DataSet second = conn.getData(query);
 
-        DataTable dt = new DataTable();
-
-        sda.Fill(dt);
-        Repeater1.DataSource = dt;
+        // send data to the repeater
+        Repeater1.DataSource = second;
         Repeater1.DataBind();
     }
 }
