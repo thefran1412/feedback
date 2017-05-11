@@ -11,43 +11,33 @@ using System.Configuration;
 
 public partial class login_Default : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+    SqlCommand cmd = new SqlCommand();
+    SqlConnection con = new SqlConnection();
+    SqlDataAdapter sda = new SqlDataAdapter();
+    DataSet ds = new DataSet();
 
+    protected void Page_Load(Object sender, EventArgs e)
+    {
+        con.ConnectionString = "Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;";
+        con.Open();
     }
 
     public void Logon_Click(object sender, EventArgs e)
     {
-        string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-        SqlConnection con = new SqlConnection(constr);
-        string query = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'";
 
+        cmd.CommandText = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'AND password='"+UserPass.Text+"'";
+        cmd.Connection = con;
+        sda.SelectCommand = cmd;
+        sda.Fill(ds, "reg");
 
-        SqlCommand cmd = new SqlCommand(query, con);
-        DataSet ds = new DataSet();
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        using (SqlDataReader reader = cmd.ExecuteReader())
+        if (ds.Tables[0].Rows.Count > 0)
         {
-            if (reader.Read())
-            {
-                Console.WriteLine(String.Format("{0}", reader["email"]));
-            }
-        }
-        da.Fill(ds);
-        con.Close();
-        var table = ds.Tables["Table"].Rows;
-
-        if ((UserEmail.Text == "a@b.com") &&
-                (UserPass.Text == "123"))
-        {
-            Session["name"] = UserEmail.Text;
-            FormsAuthentication.RedirectFromLoginPage
-               (UserEmail.Text, Persist.Checked);
-            Response.Redirect("config.aspx");
+            Msg.Text = "Data ok";
+            object hol = ds.Tables[0].Rows[0].ItemArray;
         }
         else
         {
-            Msg.Text = "Invalid credentials. Please try again.";
+            Msg.Text = "Password o email mal introduit.";
         }
     }
 }

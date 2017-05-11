@@ -14,7 +14,7 @@
 <body>
     <header>
         <ul class="logo">
-            <li><a href="/index.aspx"><h2>FEEDBACK</h2></a></li>
+            <li><a href="/"><h2>FEEDBACK</h2></a></li>
         </ul>
         <ul>
             <li><a href="/register">Sign Up</a></li>
