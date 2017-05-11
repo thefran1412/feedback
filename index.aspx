@@ -6,4 +6,5 @@
 
 <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
     esto es la landing page
+     Page Before: <asp:Label ID="before" runat="server" Text="Label"></asp:Label>
 </asp:Content>

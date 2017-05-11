@@ -13,9 +13,21 @@ public partial class entity_index : System.Web.UI.Page
     {
         var id = Page.RouteData.Values["id"];
         if(id == null) {
-            Response.Redirect("/");
+            if (Session["url"] == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                Response.Redirect(Session["url"].ToString());
+            }
         }
-       var query = "SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = "+ Page.RouteData.Values["id"];
+        else
+        {
+            Session["url"] = Request.Url.ToString();
+        }
+
+        var query = "SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = "+ Page.RouteData.Values["id"];
 
         SqlConnection con = new SqlConnection("Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;");
         SqlDataAdapter sda = new SqlDataAdapter(query, con);

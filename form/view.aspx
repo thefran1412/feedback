@@ -4,5 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     Nom: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+    Page Before: <asp:Label ID="before" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 

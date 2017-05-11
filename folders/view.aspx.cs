@@ -14,8 +14,20 @@ public partial class entity_view : System.Web.UI.Page
         var hash = Page.RouteData.Values["hash"];
         if (hash == null)
         {
-            Response.Redirect("/folder/index/1");
+            if (Session["url"] == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                Response.Redirect(Session["url"].ToString());
+            }
         }
+        else
+        {
+            Session["url"] = Request.Url.ToString();
+        }
+
         var query = "SELECT fo.* FROM folders f, forms fo WHERE f.id = fo.folder_id AND f.hash = '" + hash + "'";
 
         SqlConnection con = new SqlConnection("Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;");
