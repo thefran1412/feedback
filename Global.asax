@@ -23,11 +23,11 @@
         //register
         routes.MapPageRoute("register", "register", "~/auth/register.aspx");
 
-        // entity
+        // folder
         routes.MapPageRoute("", "folder/index", "~/folders/index.aspx");
         routes.MapPageRoute("", "folder/index/{id}", "~/folders/index.aspx");
 
-        // entity view
+        // folder view
         routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
         routes.MapPageRoute("", "folder/view/{hash}", "~/folders/view.aspx");
 
@@ -37,7 +37,7 @@
 
         // form view
         routes.MapPageRoute("", "form/view", "~/form/view.aspx");
-        routes.MapPageRoute("", "form/view/{id}", "~/form/view.aspx");
+        routes.MapPageRoute("", "form/view/{hash}", "~/form/view.aspx");
 
         // form add
         routes.MapPageRoute("", "form/add", "~/form/add.aspx");

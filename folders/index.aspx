@@ -7,7 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     ENTITY > VIEW ALL 
     <asp:Repeater ID="Repeater1" runat="server">
-        <ItemTemplate><a class="folderUrl" href="/folder/view/<%#Eval("hash") %>"> 
+        <ItemTemplate>
+            <a class="folderUrl" href="/folder/view/<%#Eval("hash") %>"> 
             <div class="folder">    
                 <asp:Label ID="data" runat="server" Text='<%#Eval("name") %>'></asp:Label>
             </div></a>
