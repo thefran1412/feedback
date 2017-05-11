@@ -43,3 +43,18 @@ a {
 input .login{
     background-color: aquamarine;
 }
+
+
+/* FOLDERS */
+.folder{
+    width: 100px;
+    height: 100px;
+    border: black solid 1px;
+    display: inline-block;
+    vertical-align: top;
+    
+
+}
+.folderUrl{
+    color: black;
+}

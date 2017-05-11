@@ -29,7 +29,7 @@
 
         // entity view
         routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
-        routes.MapPageRoute("", "folder/view/{id}", "~/folders/view.aspx");
+        routes.MapPageRoute("", "folder/view/{hash}", "~/folders/view.aspx");
 
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
