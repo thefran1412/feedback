@@ -23,11 +23,8 @@ public partial class form_view : System.Web.UI.Page
 
         sda.Fill(ds, "reg");
 
-        var vs = ViewState["GoBackTo"];
-
         if (ds.Tables[0].Rows.Count <= 0)
         {
-
             if (Session["url"] == null)
             {
                 Response.Redirect("/");
@@ -37,6 +34,7 @@ public partial class form_view : System.Web.UI.Page
                 Response.Redirect(Session["url"].ToString());
             }
         }
+
         Session["url"] = Request.Url.ToString();
 
         var data = ds.Tables[0].Rows[0].ItemArray;
