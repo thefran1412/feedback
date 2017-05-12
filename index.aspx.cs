@@ -18,6 +18,8 @@ public partial class index : System.Web.UI.Page
         Repeater1.DataBind();
 
         var adios = hola.Tables["dades"];*/
+        //ViewState["GoBackTo"] = Request.UrlReferrer;
 
+        Session["url"] = Request.Url.ToString();
     }
 }

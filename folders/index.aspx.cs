@@ -6,23 +6,32 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using db;
+using per;
 
 public partial class entity_index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       var query = "SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = 1";
+        // getting variable from url
+        var id = Page.RouteData.Values["id"];
+        var query = "";
 
-        var test = Request.QueryString;
+        // first query
+        query = "SELECT * FROM users WHERE id = " + Page.RouteData.Values["id"];
+        Base conn = new Base();
+        DataSet first = conn.getData(query);
 
-        SqlConnection con = new SqlConnection("Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;");
-        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+        // if there's an entry stay in page and continue, else go to page before this
+        Permissions p = new Permissions();
+        p.set(first.Tables[0].Rows.Count, Request.Url.ToString());
 
-        DataTable dt = new DataTable();
+        // second query
+        query = "SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = " + Page.RouteData.Values["id"];
+        DataSet second = conn.getData(query);
 
-        sda.Fill(dt);
-        Repeater1.DataSource = dt;
+        // send data to the repeater
+        Repeater1.DataSource = second;
         Repeater1.DataBind();
-
     }
 }
