@@ -34,6 +34,10 @@ public partial class login_Default : System.Web.UI.Page
         {
             Msg.Text = "Data ok";
             object hol = ds.Tables[0].Rows[0].ItemArray;
+            object userId = ds.Tables[0].Rows[0].ItemArray[0];
+
+            Session["userId"] = userId;
+
         }
         else
         {

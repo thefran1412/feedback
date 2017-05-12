@@ -13,6 +13,11 @@ public partial class Template : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        if (Session["userId"] != null)
+        {
+            string url = "/folder/index/" + Session["userId"];
+            //routes.Redirect("uk", "/uk/Home/Index");
+            Response.Redirect(url);
+        }
     }
 }
