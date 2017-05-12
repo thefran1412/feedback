@@ -23,8 +23,8 @@ public partial class entity_index : System.Web.UI.Page
         DataSet first = conn.getData(query);
 
         // if there's an entry stay in page and continue, else go to page before this
-        Permissions p = new Permissions();
-        p.set(first.Tables[0].Rows.Count, Request.Url.ToString());
+        //Permissions p = new Permissions();
+        //p.set(first.Tables[0].Rows.Count, Request.Url.ToString());
 
         // second query
         query = "SELECT f.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND uf.user_id = " + Page.RouteData.Values["id"];
