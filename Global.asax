@@ -25,7 +25,6 @@
 
         // folder
         routes.MapPageRoute("", "folder/index", "~/folders/index.aspx");
-        routes.MapPageRoute("", "folder/index/{id}", "~/folders/index.aspx");
 
         // folder view
         routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
