@@ -22,14 +22,12 @@ public partial class entity_view : System.Web.UI.Page
         Base conn = new Base();
         DataSet first = conn.getData(query);
 
-        // does user have permission to enter?
-        query = "SELECT u.user_id FROM users_folders u, folders f WHERE u.folder_id = f.id AND f.hash = '"+hash+"'";
-        DataSet user = conn.getData(query);
-        var user_data = user.Tables[0].Rows[0];
-
         // if there's an entry stay in page and continue, else go to page before this
         Permissions p = new Permissions();
-        p.set(first.Tables[0].Rows.Count, Request.Url.ToString(), user_data.ItemArray[0].ToString());
+        p.set(first.Tables[0].Rows.Count);
+        
+        // does user has permission?
+        p.accessFolder(hash.ToString());
         
         // get objects
         query = "SELECT fo.* FROM folders f, forms fo WHERE f.id = fo.folder_id AND f.hash = '" + hash + "'";

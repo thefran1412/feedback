@@ -12,7 +12,7 @@ namespace per
 {
     public class Permissions
     {
-        public void set(int count, string url, string user_id = null)
+        public void set(int count)
         {
             var session = System.Web.HttpContext.Current.Session;
 
@@ -25,49 +25,110 @@ namespace per
             // if the thing looking for doesn't exist
             if (count <= 0)
             {
-                goBack(session["url"].ToString());
+                goBack();
             }
+        }
 
-            if(user_id != null)
+        // if user doesn't own the folder then kicks him out
+        public void accessFolder(string value)
+        {
+            var query = "SELECT uf.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND f.hash = '"+value+"'";
+            var valid = false;
+
+            Base conn = new Base();
+            DataSet first = conn.getData(query);
+
+            for (int i = 0; i < first.Tables[0].Rows.Count; i++)
             {
-                // if user has no permissions
-                if (user_id != session["userId"].ToString())
+                var data = first.Tables[0].Rows[i].ItemArray;
+                var val = data[1].ToString();
+
+                var user_id = System.Web.HttpContext.Current.Session["userId"].ToString();
+
+                if (user_id == val)
                 {
-                    goBack(session["url"].ToString());
+                    //var admin = data[3].ToString();
+                    //if (admin == "True")
+                    //{
+                    //    return "admin";
+                    //}
+                    //return "user";
+                    valid = true;
+                    
                 }
+                
+            }
+            if(valid == false)
+            {
+                goBack();
+            }
+            else
+            {
+                currentUrl();
             }
 
-            // if none of the above happen then save this as last visited page
-            System.Web.HttpContext.Current.Session["url"] = url;
+            //return "none";
+
+        }
+        // if user doesn't own the form then kicks him out
+        public void accessForm(string value)
+        {
+            var query = "SELECT uf.* FROM users_folders uf, folders f, forms fo WHERE uf.folder_id = f.id AND fo.folder_id = f.id AND fo.hash = '" + value + "'";
+            var valid = false;
+
+            Base conn = new Base();
+            DataSet first = conn.getData(query);
+
+            for (int i = 0; i < first.Tables[0].Rows.Count; i++)
+            {
+                var data = first.Tables[0].Rows[i].ItemArray;
+                var val = data[1].ToString();
+
+                var user_id = System.Web.HttpContext.Current.Session["userId"].ToString();
+
+                if (user_id == val)
+                {
+                    //var admin = data[3].ToString();
+                    //if (admin == "True")
+                    //{
+                    //    return "admin";
+                    //}
+                    //return "user";
+                    valid = true;
+
+                }
+
+            }
+            var uu = System.Web.HttpContext.Current.Session["url"].ToString();
+            if (valid == false)
+            {
+                goBack();
+            }
+            else
+            {
+                currentUrl();
+            }
+
+            //return "none";
         }
 
         // goes back to previous page
-        public void goBack(string url)
+        public void goBack()
         {
-            if (url == null)
+            if (System.Web.HttpContext.Current.Session["url"] == null)
             {
                 System.Web.HttpContext.Current.Response.Redirect("/");
             }
             else
             {
-                System.Web.HttpContext.Current.Response.Redirect(url);
+                System.Web.HttpContext.Current.Response.Redirect(System.Web.HttpContext.Current.Session["url"].ToString());
             }
         }
-        public void access(string type, string value)
+
+        // sets current url
+        public void currentUrl()
         {
-            var query = "";
-
-            if (type == "folder")
-            {
-                query = "SELECT * FROM WHERE AND f.hash = '"+value+"'";
-            }
-            else if (type == "form")
-            {
-
-            }
-
-            Base conn = new Base();
-            DataSet first = conn.getData(query);
+            System.Web.HttpContext.Current.Session["url"] = System.Web.HttpContext.Current.Request.Url.ToString();
         }
     }
 }
