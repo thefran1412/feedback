@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using db;
-using per;
 
 public partial class form_view : System.Web.UI.Page
 {

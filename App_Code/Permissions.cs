@@ -8,8 +8,6 @@ using System.Data;
 using System.Data.SqlClient;
 using db;
 
-namespace per
-{
     public class Permissions
     {
         public void set(int count)
@@ -53,10 +51,8 @@ namespace per
                     //    return "admin";
                     //}
                     //return "user";
-                    valid = true;
-                    
+                    valid = true;   
                 }
-                
             }
             if(valid == false)
             {
@@ -113,7 +109,7 @@ namespace per
         }
 
         // goes back to previous page
-        public void goBack()
+        public static void goBack()
         {
             if (System.Web.HttpContext.Current.Session["url"] == null)
             {
@@ -126,9 +122,8 @@ namespace per
         }
 
         // sets current url
-        public void currentUrl()
+        public static void currentUrl()
         {
             System.Web.HttpContext.Current.Session["url"] = System.Web.HttpContext.Current.Request.Url.ToString();
         }
     }
-}

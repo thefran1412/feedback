@@ -9,6 +9,18 @@ using db;
 
 public class Folders
 {
+    public DataSet getInfo(string hash)
+    {
+        exists(hash);
+        access(hash, true);
+
+        var query = "SELECT * FROM folders WHERE hash='"+hash+"';";
+        Base conn = new Base();
+        DataSet ds = conn.getData(query);
+
+        return ds;
+    }
+
     public void add(string name, string color1, string color2)
     {
         var hashed = hash(name);
@@ -31,6 +43,7 @@ public class Folders
     public void edit(string name, string color1, string color2, string hash)
     {
         exists(hash);
+        access(hash, true);
         var query = "UPDATE folders SET name = '" + name + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
         execute(query);
     }
@@ -38,6 +51,7 @@ public class Folders
     public void delete(string hash)
     {
         exists(hash);
+        access(hash, false);
         var query = "DELETE FROM folders WHERE hash = '" + hash + "';";
         execute(query);
     }
@@ -76,5 +90,39 @@ public class Folders
         var id = ds.Tables[0].Rows[0].ItemArray[0];
 
         return Convert.ToInt32(id);
+    }
+
+    public void access(string hash, bool saveUrl)
+    {
+        var query = "SELECT uf.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND f.hash = '" + hash + "'";
+        var valid = false;
+
+        Base conn = new Base();
+        DataSet first = conn.getData(query);
+
+        for (int i = 0; i < first.Tables[0].Rows.Count; i++)
+        {
+            var data = first.Tables[0].Rows[i].ItemArray;
+            var val = data[1].ToString();
+
+            var user_id = System.Web.HttpContext.Current.Session["userId"].ToString();
+
+            if (user_id == val)
+            {
+                valid = true;
+            }
+
+        }
+        if (valid == false)
+        {
+            Permissions.goBack();
+        }
+        else
+        {
+            if(saveUrl == true)
+            {
+                Permissions.currentUrl();
+            }
+        }
     }
 }
