@@ -11,7 +11,6 @@ namespace crud
 {
     public class c
     {
-
         public void createFolder(string name, string color1, string color2)
         {
             var hashed = hash(name);
@@ -27,7 +26,7 @@ namespace crud
             last_id = lastInsertedId("folders");
 
             // insert users_folders table
-            query = "INSERT INTO users_folders (user_id, folder_id, is_admin) VALUES(" + user_id + ", " + (last_id + 1) + ", " + 1 + ");";
+            query = "INSERT INTO users_folders (user_id, folder_id, is_admin) VALUES(" + user_id + ", " + last_id + ", " + 1 + ");";
             execute(query);
         }
 
@@ -41,21 +40,7 @@ namespace crud
         {
             value = value + DateTime.Now.ToString("yyyyMMddHHmmssfff");
 
-            public static byte[] GetHash(string inputString)
-            {
-                HashAlgorithm algorithm = MD5.Create();  //or use SHA1.Create();
-                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
-            }
-
-            var inputString = "hola";
-                StringBuilder sb = new StringBuilder();
-                foreach (byte b in GetHash(inputString))
-                    sb.Append(b.ToString("X2"));
-
-                return sb.ToString();
-            
-
-            return value.GetHashCode().ToString();
+            return HashStrings.GetHashedString(value);
         }
 
         // returns last inserted id of the table you specify

@@ -31,6 +31,7 @@ namespace db
         {
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
     }

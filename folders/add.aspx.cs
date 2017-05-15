@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using crud;
+using per;
 
 public partial class folders_add : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Permissions p = new Permissions();
+        p.set(1);
 
     }
 
