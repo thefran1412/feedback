@@ -30,6 +30,9 @@
         routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
         routes.MapPageRoute("", "folder/view/{hash}", "~/folders/view.aspx");
 
+        // folder add
+        routes.MapPageRoute("", "folder/add", "~/folders/add.aspx");
+
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
         routes.MapPageRoute("", "form/index/{id}", "~/form/index.aspx");
