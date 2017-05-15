@@ -17,13 +17,18 @@
         // forgot
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
-        // entity
-        routes.MapPageRoute("", "folder/index", "~/entity/index.aspx");
-        routes.MapPageRoute("", "folder/index/{id}", "~/entity/index.aspx");
+        //login
+        routes.MapPageRoute("login", "login", "~/auth/login.aspx");
 
-        // entity view
-        routes.MapPageRoute("", "folder/view", "~/entity/view.aspx");
-        routes.MapPageRoute("", "folder/view/{id}", "~/entity/view.aspx");
+        //register
+        routes.MapPageRoute("register", "register", "~/auth/register.aspx");
+
+        // folder
+        routes.MapPageRoute("", "folder/index", "~/folders/index.aspx");
+
+        // folder view
+        routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
+        routes.MapPageRoute("", "folder/view/{hash}", "~/folders/view.aspx");
 
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
@@ -31,7 +36,7 @@
 
         // form view
         routes.MapPageRoute("", "form/view", "~/form/view.aspx");
-        routes.MapPageRoute("", "form/view/{id}", "~/form/view.aspx");
+        routes.MapPageRoute("", "form/view/{hash}", "~/form/view.aspx");
 
         // form add
         routes.MapPageRoute("", "form/add", "~/form/add.aspx");

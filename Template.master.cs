@@ -13,29 +13,21 @@ public partial class Template : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        Logo.ServerClick += new System.EventHandler(this.Logo_Click);
+        
     }
-    public void Logon_Click(object sender, EventArgs e)
+
+    public void Logo_Click(object sender, EventArgs e)
     {
-
-        //string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-        //SqlConnection con = new SqlConnection(constr);
-        //string query = "SELECT * FROM users WHERE users.email=" + '"' + UserEmail.Text + '"';
-
-
-        //SqlCommand cmd = new SqlCommand(query, con);
-
-        //if ((UserEmail.Text == "a@b.com") &&
-        //        (UserPass.Text == "123"))
-        //{
-        //    Session["name"] = UserEmail.Text;
-        //    FormsAuthentication.RedirectFromLoginPage
-        //       (UserEmail.Text, Persist.Checked);
-        //    Response.Redirect("config.aspx");
-        //}
-        //else
-        //{
-        //    Msg.Text = "Invalid credentials. Please try again.";
-        //}
+        if (Session["userId"] != null)
+        {
+            string url = "/folder/index/" + Session["userId"];
+            // routes.Redirect("uk", "/uk/Home/Index");
+            Response.Redirect(url);
+        }
+        else
+        {
+            Response.Redirect("/");
+        }
     }
 }
