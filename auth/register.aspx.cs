@@ -7,12 +7,17 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
+using System.Diagnostics;
 
 public partial class login_Default : System.Web.UI.Page
 {
     protected void RegisterUser(object sender, EventArgs e)
     {
-
+        TextWriterTraceListener writer = new TextWriterTraceListener(System.Console.Out);
+        Debug.Listeners.Add(writer);
+        
         int userId = 0;
         string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         using (SqlConnection con = new SqlConnection(constr))
@@ -24,8 +29,9 @@ public partial class login_Default : System.Web.UI.Page
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Password", HashStrings.GetHashedString(txtPassword.Text.Trim()));
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Hash", HashStrings.GetHashedString(txtName.Text.Trim()));
                     cmd.Connection = con;
                     con.Open();
                     userId = Convert.ToInt32(cmd.ExecuteScalar());
@@ -56,6 +62,6 @@ public partial class login_Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        System.Diagnostics.Debug.WriteLine("Holaaas");
     }
 }
