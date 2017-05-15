@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "feedback", ".", "{69CD05C8-C00F-4C2E-95E9-1E2A6D8ADE18}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -27,6 +27,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "feedback", ".", "{69CD05C8-
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dadesNico", "..\dadesNico\dadesNico.vbproj", "{4176A494-9851-4298-A1C9-8420E1246C2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintConsole", "..\PrintConsole\PrintConsole.csproj", "{E2384012-0D88-4C84-B97E-84FEAF013E42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{4176A494-9851-4298-A1C9-8420E1246C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4176A494-9851-4298-A1C9-8420E1246C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4176A494-9851-4298-A1C9-8420E1246C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2384012-0D88-4C84-B97E-84FEAF013E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2384012-0D88-4C84-B97E-84FEAF013E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2384012-0D88-4C84-B97E-84FEAF013E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2384012-0D88-4C84-B97E-84FEAF013E42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
