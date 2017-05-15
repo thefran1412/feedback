@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
-using System.Diagnostics;
 
 public partial class login_Default : System.Web.UI.Page
 {
     protected void RegisterUser(object sender, EventArgs e)
     {
-        TextWriterTraceListener writer = new TextWriterTraceListener(System.Console.Out);
-        Debug.Listeners.Add(writer);
-        
+        UserNameValidation.Text = "";
+        EmailValidator.Text = "";
+
         int userId = 0;
         string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         using (SqlConnection con = new SqlConnection(constr))
@@ -31,7 +24,8 @@ public partial class login_Default : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", HashStrings.GetHashedString(txtPassword.Text.Trim()));
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Hash", HashStrings.GetHashedString(txtName.Text.Trim()));
+                    cmd.Parameters.AddWithValue("@Hash", HashStrings.GetHashedString(txtEmail.Text.Trim()));
+                    cmd.Parameters.AddWithValue("@Verified", 1);
                     cmd.Connection = con;
                     con.Open();
                     userId = Convert.ToInt32(cmd.ExecuteScalar());
@@ -42,26 +36,21 @@ public partial class login_Default : System.Web.UI.Page
             switch (userId)
             {
                 case -1:
-                    message = "Username already exists.\\nPlease choose a different username.";
+                    UserNameValidation.Text = "El nombre de usuario ya existe.";
                     break;
                 case -2:
-                    message = "Supplied email address has already been used.";
+                    EmailValidator.Text = "El eMail introducido ya existe";
                     break;
                 default:
-                    message = "Registration successful.\\nUser Id: " + userId.ToString();
                     break;
             }
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
         }
-    }
-
-    protected void txtConfirmPassword_TextChanged(object sender, EventArgs e)
-    {
-
+        if (Page.IsValid)
+        {
+        }
     }
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Holaaas");
     }
 }
