@@ -13,9 +13,8 @@ public partial class Template : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
         Logo.ServerClick += new System.EventHandler(this.Logo_Click);
-
+        
     }
 
     public void Logo_Click(object sender, EventArgs e)

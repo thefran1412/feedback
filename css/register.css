@@ -1,0 +1,27 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+input {
+    width: 200px;
+}
+
+table {
+    border: 1px solid #ccc;
+}
+
+    table th {
+        background-color: #F7F7F7;
+        color: #333;
+        font-weight: bold;
+    }
+
+    table th, table td {
+        padding: 5px;
+        border-color: #ccc;
+    }
+
+.auto-style1 {
+    height: 25px;
+}
