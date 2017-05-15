@@ -18,24 +18,24 @@ public partial class Template : System.Web.UI.MasterPage
     public void Logon_Click(object sender, EventArgs e)
     {
 
-        string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-        SqlConnection con = new SqlConnection(constr);
-        string query = "SELECT * FROM users WHERE users.email=" + '"' + UserEmail.Text + '"';
+        //string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+        //SqlConnection con = new SqlConnection(constr);
+        //string query = "SELECT * FROM users WHERE users.email=" + '"' + UserEmail.Text + '"';
 
 
-        SqlCommand cmd = new SqlCommand(query, con);
+        //SqlCommand cmd = new SqlCommand(query, con);
 
-        if ((UserEmail.Text == "a@b.com") &&
-                (UserPass.Text == "123"))
-        {
-            Session["name"] = UserEmail.Text;
-            FormsAuthentication.RedirectFromLoginPage
-               (UserEmail.Text, Persist.Checked);
-            Response.Redirect("config.aspx");
-        }
-        else
-        {
-            Msg.Text = "Invalid credentials. Please try again.";
-        }
+        //if ((UserEmail.Text == "a@b.com") &&
+        //        (UserPass.Text == "123"))
+        //{
+        //    Session["name"] = UserEmail.Text;
+        //    FormsAuthentication.RedirectFromLoginPage
+        //       (UserEmail.Text, Persist.Checked);
+        //    Response.Redirect("config.aspx");
+        //}
+        //else
+        //{
+        //    Msg.Text = "Invalid credentials. Please try again.";
+        //}
     }
 }

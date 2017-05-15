@@ -12,12 +12,9 @@ public partial class CS : System.Web.UI.Page
 {
     protected void RegisterUser(object sender, EventArgs e)
     {
-    //    Public Sub Conexion()
-    //    cnx = New SqlConnection(cnxSQL)
-    //    cnx.Open()
-    //    cnx.InitializeLifetimeService()
+
         int userId = 0;
-        string constr = ConfigurationManager.ConnectionStrings["ConectionString"].ConnectionString;
+        string constr = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         using (SqlConnection con = new SqlConnection(constr))
         {
             using (SqlCommand cmd = new SqlCommand("Insert_User"))

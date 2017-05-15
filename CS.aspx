@@ -4,7 +4,7 @@
 </asp:Content>
     <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
 
-        <form id="form1" runat="server">
+        <form id="form2">
     <table border="0" cellpadding="0" cellspacing="0">
         <tr>
             <th colspan="3">

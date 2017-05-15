@@ -30,7 +30,7 @@
           <h2>Modal Header</h2>
         </div>
         <div class="modal-body">
- <form id="form1" runat="server">
+<%-- <form id="form1" runat="server">
     <h3>
       Logon Page</h3>
     <table>
@@ -73,7 +73,7 @@
     <p>
       <asp:Label ID="Msg" ForeColor="red" runat="server" />
     </p>
-  </form>
+  </form>--%>
         </div>
         <div class="modal-footer">
           <h3>Modal Footer</h3>
