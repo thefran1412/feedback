@@ -13,14 +13,15 @@
 </head>
 <body>
     <header>
-        <ul class="logo">
-            <li><a ID="Logo" onserverclick="Logo_Click" runat="server"><h2>FEEDBACK</h2></a></li>
-            <%--<asp:HyperLink id="hyperlink1" 
-                  NavigateUrl="/"
-                  Text="hola"
-                   OnClick="Logo_Click"
-                  runat="server"/>--%>
-        </ul>
+        <form class="logo" id="form1" runat="server">
+
+             
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+
+              <asp:Label id="Label1" runat="server" />
+
+           </form>
+        
         <ul>
             <li><a href="/register">Sign Up</a></li>
             <li><a href="/login">Log In</a></li>
