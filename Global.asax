@@ -33,6 +33,14 @@
         // folder add
         routes.MapPageRoute("", "folder/add", "~/folders/add.aspx");
 
+        // folder edit
+        routes.MapPageRoute("", "folder/edit", "~/folders/edit.aspx");
+        routes.MapPageRoute("", "folder/edit/{hash}", "~/folders/edit.aspx");
+
+        // folder delete
+        routes.MapPageRoute("", "folder/delete", "~/folders/delete.aspx");
+        routes.MapPageRoute("", "folder/delete/{hash}", "~/folders/delete.aspx");
+
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
         routes.MapPageRoute("", "form/index/{id}", "~/form/index.aspx");

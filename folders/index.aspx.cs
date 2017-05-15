@@ -17,10 +17,6 @@ public partial class entity_index : System.Web.UI.Page
         var id = Session["userId"];
         var query = "";
 
-        if(id == null){
-            Response.Redirect("/login");
-        }
-
         // first query
         query = "SELECT * FROM users WHERE id = " + id + ";";
         Base conn = new Base();

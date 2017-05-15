@@ -11,6 +11,7 @@ namespace crud
 {
     public class c
     {
+        // to create folder
         public void createFolder(string name, string color1, string color2)
         {
             var hashed = hash(name);
@@ -27,6 +28,21 @@ namespace crud
 
             // insert users_folders table
             query = "INSERT INTO users_folders (user_id, folder_id, is_admin) VALUES(" + user_id + ", " + last_id + ", " + 1 + ");";
+            execute(query);
+        }
+
+        // to edit folder
+        public void editFolder(string name, string color1, string color2, string hash)
+        {
+            // insert folders table
+            var query = "UPDATE folders SET name = '"+name+ "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '"+ hash +"';";
+            execute(query);
+        }
+
+        public void deleteFolder(string hash)
+        {
+            // insert folders table
+            var query = "DELETE FROM folders WHERE hash = '" + hash + "';";
             execute(query);
         }
 
