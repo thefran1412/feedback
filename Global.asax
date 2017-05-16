@@ -17,8 +17,12 @@
         // forgot
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
-        //login
+        // login
         routes.MapPageRoute("login", "login", "~/auth/login.aspx");
+
+        // logout
+        routes.MapPageRoute("logout", "logout", "~/auth/logout.aspx");
+
 
         //register
         routes.MapPageRoute("register", "register", "~/auth/register.aspx");

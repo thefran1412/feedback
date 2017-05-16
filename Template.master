@@ -43,8 +43,7 @@
         }
 
         function closeSession() {
-            <%=Session["userId"]=""%>
-            window.location.href = "/";
+            window.location.href = "/logout";
         }
 
     </script>
