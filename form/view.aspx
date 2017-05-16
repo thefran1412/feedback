@@ -3,13 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-    Nom: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+    Pregunta: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
                 <div class="answer" >
-                    <div>
-                        <span>Pregunta:</span><asp:Label ID="Label1" runat="server" Text='<%#Eval("name") %>'></asp:Label>
-                    </div>
                     <div>
                         <span>Puntuació sobre 5:</span><asp:Label ID="data" runat="server" Text='<%#Eval("rating") %>'></asp:Label>
                     </div>
