@@ -13,6 +13,11 @@ public partial class folders_edit : System.Web.UI.Page
     string hash = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Page.RouteData.Values["hash"] == null)
+        {
+            Permissions.goBack();
+        }
+
         hash = Page.RouteData.Values["hash"].ToString();
 
         Permissions p = new Permissions();

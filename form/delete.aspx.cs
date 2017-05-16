@@ -9,6 +9,10 @@ public partial class form_delete : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Page.RouteData.Values["hash"] == null)
+        {
+            Permissions.goBack();
+        }
         var hash = Page.RouteData.Values["hash"].ToString();
 
         Permissions p = new Permissions();
