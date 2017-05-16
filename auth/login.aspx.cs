@@ -20,7 +20,7 @@ public partial class login_Default : System.Web.UI.Page
 
     protected void Page_Load(Object sender, EventArgs e)
     {
-        if (Session["userId"] != "")
+        if (Session["userId"] != "" && Session["userId"] != null)
         {
             Response.Redirect("/folder/index");
         }

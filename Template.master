@@ -4,7 +4,8 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>feedback</title>
     <link rel="stylesheet" href="css/main.css" />
     <link href="css/modal.css" rel="stylesheet" />
@@ -14,19 +15,19 @@
 <body>
     <header>
         
-        <% if(Session["userId"] == "") { %>
+        <% if(Session["userId"] == "" || Session["userId"] == null) { %>
             <a href="/" class="logo"><h2>FeedBack</h2></a>
         <% } %>
-        <% if(Session["userId"] != "") { %>
+        <% if(Session["userId"] != "" && Session["userId"] != null) { %>
             <a href="/folder/index" class="logo" ><h2>FeedBack</h2></a>
         <% } %>
         
         <ul>
-            <% if(Session["userId"] == "") { %>
+            <% if(Session["userId"] == "" || Session["userId"] == null) { %>
                 <li><a href="/register">Sign Up</a></li>
                 <li><a href="/login">Log In</a></li>
             <% } %>
-            <% if(Session["userId"] != "") { %>
+            <% if(Session["userId"] != "" && Session["userId"] != null) { %>
                 <li><a href="#" onclick="closeSession()" >Session Close</a></li>
             <% } %>
         </ul>

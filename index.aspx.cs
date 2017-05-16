@@ -25,5 +25,10 @@ public partial class index : System.Web.UI.Page
         //    Response.Redirect("/folder/index");
         //}
         //Session["url"] = Request.Url.ToString();
+        if (Session["userId"] != null && Session["userId"].ToString() != "")
+        {
+            Response.Redirect("/folder/index");
+        }
+        Session["url"] = Request.Url.ToString();
     }
 }
