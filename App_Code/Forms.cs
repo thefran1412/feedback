@@ -50,7 +50,7 @@ public class Forms
     {
         exists(hash);
         access(hash, true);
-        var query = "UPDATE forma SET name = '" + name + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
+        var query = "UPDATE forms SET name = '" + name + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
         execute(query);
     }
 
@@ -102,7 +102,7 @@ public class Forms
 
     public void access(string hash, bool saveUrl)
     {
-        var query = "SELECT u.id FROM forms fo, folders f, users_folders uf WHERE fo.folder_id = fo.id AND f.id = uf.folder_id AND fo.hash = '" + hash + "'";
+        var query = "SELECT uf.* FROM forms fo, folders f, users_folders uf WHERE fo.folder_id = f.id AND f.id = uf.folder_id AND fo.hash = '" + hash + "'";
         var valid = false;
 
         Base conn = new Base();

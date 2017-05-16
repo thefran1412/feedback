@@ -24,15 +24,15 @@ public partial class form_edit : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
-            name.Text = data.ItemArray[1].ToString();
-            color1.Text = data.ItemArray[2].ToString();
-            color2.Text = data.ItemArray[3].ToString();
+            name.Text = data.ItemArray[2].ToString();
+            color1.Text = data.ItemArray[4].ToString();
+            color2.Text = data.ItemArray[5].ToString();
         }
     }
     protected void Edit(object sender, EventArgs e)
     {
-        Folders folder = new Folders();
-        folder.edit(name.Text, color1.Text, color2.Text, hash);
+        Forms form = new Forms();
+        form.edit(name.Text, color1.Text, color2.Text, hash);
         Response.Redirect("/form/view/" + hash);
     }
 }
