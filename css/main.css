@@ -100,11 +100,29 @@ input{
     color: white;
 }
 
-.add span{
-    line-height: 200px;
-    font-size: 4em;
-    
-}
 input {
     border: 1px solid black;
+}
+
+
+/*Answers*/
+
+.answer {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    margin: 10px;
+    padding: 10px;
+}
+
+.answer > div {
+    margin-bottom:10px;
+}
+
+.answer > div > span:nth-of-type(1) {
+    font-weight:bold;
+    display:block;
 }

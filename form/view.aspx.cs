@@ -30,5 +30,11 @@ public partial class form_view : System.Web.UI.Page
         var data = first.Tables[0].Rows[0].ItemArray;
         name.Text = data[2].ToString();
 
+        Answer answer = new Answer();
+        DataSet answers = answer.getAnswers(hash);
+
+        Repeater1.DataSource = answers;
+        Repeater1.DataBind();
+
     }
 }
