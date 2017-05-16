@@ -81,6 +81,7 @@ input{
 }
 /* FOLDERS */
 .folder {
+    position:relative;
     width: 200px;
     height: 200px;
     display: inline-block;
@@ -92,6 +93,13 @@ input{
 }
 .folderUrl{
     color: black;
+}
+
+.answerUrl {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color:black;
 }
 
 .add {

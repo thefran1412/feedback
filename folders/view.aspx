@@ -14,6 +14,7 @@
             <a class="folderUrl" href="/form/view/<%#Eval("hash") %>">
                 <div class="folder" style="background: linear-gradient(to right, <%#Eval("color1") %> , <%#Eval("color2") %>);">
                     <asp:Label ID="data" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+                    <a class="answerUrl" href="/form/answer/<%#Eval("hash") %>">Obtenir link</a>
                 </div>
             </a>
         </ItemTemplate>
