@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 public partial class form_edit : System.Web.UI.Page
 {
@@ -28,15 +29,42 @@ public partial class form_edit : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
-            name.Text = data.ItemArray[2].ToString();
+            question.Text = data.ItemArray[2].ToString();
+            Description.Text = data.ItemArray[7].ToString();
             color1.Text = data.ItemArray[4].ToString();
             color2.Text = data.ItemArray[5].ToString();
         }
     }
     protected void Edit(object sender, EventArgs e)
     {
-        Forms form = new Forms();
-        form.edit(name.Text, color1.Text, color2.Text, hash);
-        Response.Redirect("/form/view/" + hash);
+        color1Label.Text = "";
+        color2Label.Text = "";
+        String pattern = "^[#](\\d|[AaBbcCdDeEfF]){6}";
+
+        if (MatchString(pattern, color1.Text))
+        {
+            if (color2.Text != "" ||
+            MatchString(pattern, color2.Text))
+            {
+                Forms form = new Forms();
+                form.edit(question.Text, Description.Text, color1.Text, color2.Text, hash);
+                Response.Redirect("/form/view/" + hash);
+            }
+            else
+            {
+                color2Label.Text = "The Hexadecimal code introduced is not valid";
+            }
+        }
+        else
+        {
+            color1Label.Text = "The Hexadecimal code introduced is not valid";
+        }
+    
+    }
+
+    public Boolean MatchString(String pattern, String text)
+    {
+        Regex rgx = new Regex(pattern);
+        return rgx.IsMatch(text);
     }
 }

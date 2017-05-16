@@ -5,36 +5,48 @@
 <html>
 <head runat="server">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>feedback</title>
     <link rel="stylesheet" href="css/main.css" />
-    <link href="css/modal.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <link href="css/modal.css" rel="stylesheet" />    
+    <link rel="stylesheet" type="text/css" href="/css/forms.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/jqColorPicker.min.js"></script>
+    <script src="/js/forms.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <header>
-        
-        <% if(Session["userId"] == "" || Session["userId"] == null) { %>
-            <a href="/" class="logo"><h2>FeedBack</h2></a>
+
+        <% if (Session["userId"] == "" || Session["userId"] == null)
+            { %>
+        <a href="/" class="logo">
+            <h2>FeedBack</h2>
+        </a>
         <% } %>
-        <% if(Session["userId"] != "" && Session["userId"] != null) { %>
-            <a href="/folder/index" class="logo" ><h2>FeedBack</h2></a>
+        <% if (Session["userId"] != "" && Session["userId"] != null)
+            { %>
+        <a href="/folder/index" class="logo">
+            <h2>FeedBack</h2>
+        </a>
         <% } %>
-        
+
         <ul>
-            <% if(Session["userId"] == "" || Session["userId"] == null) { %>
-                <li><a href="/register">Sign Up</a></li>
-                <li><a href="/login">Log In</a></li>
+            <% if (Session["userId"] == "" || Session["userId"] == null)
+                { %>
+            <li><a href="/register">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
             <% } %>
-            <% if(Session["userId"] != "" && Session["userId"] != null) { %>
-                <li><a href="#" onclick="closeSession()" >Logout</a></li>
+            <% if (Session["userId"] != "" && Session["userId"] != null)
+                { %>
+            <li><a href="#" onclick="closeSession()">Logout</a></li>
             <% } %>
         </ul>
     </header>
     <div class="content">
-            <asp:ContentPlaceHolder id="content" runat="server">
-            </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="content" runat="server">
+        </asp:ContentPlaceHolder>
     </div>
     <script type="text/javascript"> 
         var JavascriptBlah = '<%=Session["userId"]%>';
@@ -43,10 +55,10 @@
 
         if (JavascriptBlah != '') {
             //document.getElementById("logo").setAttribute("href", "xyz.php");
-            document.getElementById("logo").href = "/folder/index"; 
+            document.getElementById("logo").href = "/folder/index";
         } else {
-           // document.getElementById("logo").setAttribute("href", "xyz.php");
-            document.getElementById("logo").href = "/"; 
+            // document.getElementById("logo").setAttribute("href", "xyz.php");
+            document.getElementById("logo").href = "/";
         }
 
         function closeSession() {

@@ -5,17 +5,62 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     edit folder
     <form runat="server">
-        <asp:Label runat="server" Text="name"></asp:Label>
-        <asp:TextBox ID="name" Name="name" runat="server"/>
-        
-        <asp:Label runat="server" Text="color1"></asp:Label>
-        <asp:TextBox ID="color1" Name="color1" runat="server"/>
-        
-        <asp:Label runat="server" Text="color1"></asp:Label>
-        <asp:TextBox ID="color2" Name="color2" runat="server"/>
-        
-        <asp:Button ID="submit" OnClick="Edit" Text="Create" 
-                   runat="server" />
+        <table>
+            <tr>
+                <td>
+                    Name Of the folder:
+                </td>
+                <td>
+                    <asp:TextBox ID="name" runat="server" />
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="name" runat="server" />
+                </td>
+            </tr>
+<%--            <tr>
+                <td>Add a Description:
+                </td>
+                <td>
+                    <asp:TextBox ID="Description" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                </td>
+                <td>
+                    <asp:Label ID="DescriptionLabel" ForeColor="Red" runat="server"></asp:Label>
+                </td>
+            </tr>--%>
+            <tr>
+                <td>Choose main Color:
+                </td>
+                <td>
+                    <asp:TextBox CssClass="color" ID="color1" value="#89CAFF" runat="server" />
+                </td>
+                <td>
+                    <asp:Label ID="color1Label" ForeColor="Red" runat="server"></asp:Label>
+                    <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="color1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td>Choose Secondary Color:
+                </td>
+                <td>
+                    <asp:TextBox CssClass="color" value="#FFFFFF" ID="color2" runat="server" />
+                </td>
+                <td>
+                    <asp:Label ID="color2Label" ForeColor="Red" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Button ID="Button1" OnClick="Create" Text="Create"
+                        runat="server" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+
+        </table>
     </form>
 </asp:Content>
 
