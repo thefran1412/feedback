@@ -30,5 +30,8 @@ public partial class form_view : System.Web.UI.Page
         var data = first.Tables[0].Rows[0].ItemArray;
         name.Text = data[2].ToString();
 
+        Answer answer = new Answer();
+        answer.getAnswers(hash);
+
     }
 }
