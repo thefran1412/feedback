@@ -66,6 +66,6 @@ input{
     color: black;
 }
 
-input {
+input, textarea {
     border: 1px solid black;
 }
