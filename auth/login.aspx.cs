@@ -17,8 +17,14 @@ public partial class login_Default : System.Web.UI.Page
     SqlDataAdapter sda = new SqlDataAdapter();
     DataSet ds = new DataSet();
 
+
     protected void Page_Load(Object sender, EventArgs e)
     {
+        if (Session["userId"] != "")
+        {
+            Response.Redirect("/folder/index");
+        }
+
         con.ConnectionString = "Data Source=serverfeedback.database.windows.net; Initial Catalog=feedback; Persist Security Info=True; User ID=admin123; Password=piZzarra1617;";
         con.Open();
     }
