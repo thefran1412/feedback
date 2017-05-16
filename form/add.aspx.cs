@@ -20,7 +20,7 @@ public partial class form_add : System.Web.UI.Page
     protected void Create(object sender, EventArgs e)
     {
         Forms form = new Forms();
-        form.add(name.Text, color1.Text, color2.Text, hash);
+        form.add(question.Text, Description.Text, color1.Text, color2.Text, hash);
         Response.Redirect("/folder/view/"+hash);
     }
 

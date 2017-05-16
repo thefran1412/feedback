@@ -28,7 +28,7 @@
                 <li><a href="/login">Log In</a></li>
             <% } %>
             <% if(Session["userId"] != "" && Session["userId"] != null) { %>
-                <li><a href="#" onclick="closeSession()" >Session Close</a></li>
+                <li><a href="#" onclick="closeSession()" >Logout</a></li>
             <% } %>
         </ul>
     </header>

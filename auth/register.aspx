@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="contentInside" ContentPlaceHolderID="content" Runat="Server">
 
-        <form id="form2" runat="server">
+        <form id="form" runat="server">
     <table border="0" cellpadding="0" cellspacing="0">
         <tr>
             <th colspan="3">
@@ -16,7 +16,8 @@
         <tr>
             <td>Nombre de Usuario</td>
             <td>
-                <asp:TextBox ID="txtUsername" runat="server" /></td>
+                <asp:TextBox ID="txtUsername" runat="server" />
+            </td>
             <td>
                 <asp:Label ID="UserNameValidation" ForeColor="Red" runat="server"></asp:Label>
                 <asp:RequiredFieldValidator ErrorMessage="Campo requerido" ForeColor="Red" ControlToValidate="txtUsername" runat="server" /></td>

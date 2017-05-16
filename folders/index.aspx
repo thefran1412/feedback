@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     <div class="title">
-        HOME
+        <asp:Label ID="title" runat="server" Text="HOME"></asp:Label>
     </div>
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
@@ -17,5 +17,10 @@
             </a>
         </ItemTemplate>
      </asp:Repeater>
+    <a class="folderUrl" href="/folder/add">
+        <div class="folder add">    
+            <span>+</span>
+        </div>
+    </a>
 </asp:Content>
 
