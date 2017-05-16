@@ -57,6 +57,10 @@
         routes.MapPageRoute("", "form/edit", "~/form/edit.aspx");
         routes.MapPageRoute("", "form/edit/{hash}", "~/form/edit.aspx");
 
+        // folder delete
+        routes.MapPageRoute("", "form/delete", "~/form/delete.aspx");
+        routes.MapPageRoute("", "form/delete/{hash}", "~/form/delete.aspx");
+
         // configuration
         routes.MapPageRoute("", "configuration", "~/config.aspx");
 
