@@ -41,8 +41,8 @@ a {
 
 .logo{
     position: absolute;
-    line-height: 10px;
-    left: 0;
+    line-height: 50px;
+    left: 10px;
 }
 input .login{
     background-color: aquamarine;
