@@ -23,7 +23,6 @@
         
         <ul>
             <% if(Session["userId"] == "") { %>
-
                 <li><a href="/register">Sign Up</a></li>
                 <li><a href="/login">Log In</a></li>
             <% } %>
@@ -39,7 +38,9 @@
     <script type="text/javascript"> 
         var JavascriptBlah = '<%=Session["userId"]%>';
 
-        if (JavascriptBlah !== '') {
+        console.log(JavascriptBlah);
+
+        if (JavascriptBlah != '') {
             //document.getElementById("logo").setAttribute("href", "xyz.php");
             document.getElementById("logo").href = "/folder/index"; 
         } else {
