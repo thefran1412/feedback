@@ -12,15 +12,7 @@ public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        /*DataBase obj = new DataBase();
-        obj.getData("select * from users");
-        Repeater1.DataSource() = obj;
-        Repeater1.DataBind();
-
-        var adios = hola.Tables["dades"];*/
-        //ViewState["GoBackTo"] = Request.UrlReferrer;
-
-        if(Session["userId"].ToString() != "")
+        if (Session["userId"] != null && Session["userId"].ToString() != "")
         {
             Response.Redirect("/folder/index");
         }

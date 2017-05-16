@@ -8,6 +8,10 @@
     margin-top: 0;
 }
 
+body {
+    font-family: 'Slabo 27px', serif;
+}
+
 header {
     height: 50px;
     width: 100%;
@@ -16,6 +20,13 @@ header {
     top: 0;
 }
 
+.title{
+    height: 30px;
+    background-color: dimgrey;
+    color: white;
+    padding-left: 10px;
+    line-height: 30px;
+}
 .content {
     color: #303030;
     margin-top: 50px;
@@ -39,10 +50,13 @@ a {
     text-decoration: none;
 }
 
-.logo{
+.logo {
     position: absolute;
     line-height: 50px;
     left: 10px;
+}
+.logo h2 {
+    margin-bottom: 0;
 }
 input .login{
     background-color: aquamarine;
@@ -53,12 +67,15 @@ input{
 
 
 /* FOLDERS */
-.folder{
-    width: 100px;
-    height: 100px;
-    border: black solid 1px;
+.folder {
+    width: 200px;
+    height: 200px;
     display: inline-block;
     vertical-align: top;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    margin: 10px;
+    padding: 10px;
 }
 .folderUrl{
     color: black;
