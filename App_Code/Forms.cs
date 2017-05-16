@@ -42,7 +42,7 @@ public class Forms
         var folder_id = ds.Tables[0].Rows[0].ItemArray[0];
 
         // insert folders table
-        var query = "INSERT INTO folders (name, color1, color2, hash, folder_id) VALUES('" + name + "', '" + color1 + "', '" + color2 + "', '" + hashed + "', " + folder_id + ");";
+        var query = "INSERT INTO forms (name, color1, color2, hash, visible, folder_id) VALUES('" + name + "', '" + color1 + "', '" + color2 + "', '" + hashed + "', 1, " + folder_id + ");";
         execute(query);
     }
 
