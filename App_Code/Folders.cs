@@ -65,15 +65,8 @@ public class Folders
         exists(hash);
         access(hash, false);
 
-        DataSet ds = getInfo(hash);
-        var id = ds.Tables[0].Rows[0].ItemArray[0];
-
-        //delete forms related to this folder
-        var query = "DELETE FROM forms WHERE folder_id = " + id + ";";
-        execute(query);
-
         // delete folder
-        query = "DELETE FROM folders WHERE hash = '" + hash + "';";
+        var query = "DELETE FROM folders WHERE hash = '" + hash + "';";
         execute(query);
     }
 

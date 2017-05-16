@@ -5,23 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class form_add : System.Web.UI.Page
+public partial class form_delete : System.Web.UI.Page
 {
-    string hash = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        var hash = Page.RouteData.Values["hash"].ToString();
+
         Permissions p = new Permissions();
         p.set();
 
-        hash = Page.RouteData.Values["hash"].ToString();
-
-    }
-
-    protected void Create(object sender, EventArgs e)
-    {
         Forms form = new Forms();
-        form.add(name.Text, color1.Text, color2.Text, hash);
-        Response.Redirect("/folder/view/"+hash);
+        form.delete(hash);
+        Response.Redirect("/folder/index/");
     }
-
 }
