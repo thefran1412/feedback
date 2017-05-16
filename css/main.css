@@ -47,6 +47,9 @@ a {
 input .login{
     background-color: aquamarine;
 }
+input{
+    border: 1px solid black;
+}
 
 
 /* FOLDERS */
@@ -61,4 +64,8 @@ input .login{
 }
 .folderUrl{
     color: black;
+}
+
+input {
+    border: 1px solid black;
 }

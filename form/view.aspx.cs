@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using db;
-using per;
 
 public partial class form_view : System.Web.UI.Page
 {
@@ -24,7 +23,7 @@ public partial class form_view : System.Web.UI.Page
 
         // if there's an entry stay in page and continue, else go to page before this
         Permissions p = new Permissions();
-        p.set(first.Tables[0].Rows.Count);
+        p.set();
         p.accessForm(hash.ToString());
 
         // set info to variable

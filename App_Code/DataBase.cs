@@ -27,5 +27,12 @@ namespace db
 
             return ds;
         }
+        public void sendData(string query)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

@@ -13,7 +13,7 @@
     public static void RegisterRoutes(RouteCollection routes)
     {
         routes.MapPageRoute("", "", "~/index.aspx");
-
+        
         // forgot
         routes.MapPageRoute("", "forgot", "~/forgot.aspx");
 
@@ -29,6 +29,17 @@
         // folder view
         routes.MapPageRoute("", "folder/view", "~/folders/view.aspx");
         routes.MapPageRoute("", "folder/view/{hash}", "~/folders/view.aspx");
+
+        // folder add
+        routes.MapPageRoute("", "folder/add", "~/folders/add.aspx");
+
+        // folder edit
+        routes.MapPageRoute("", "folder/edit", "~/folders/edit.aspx");
+        routes.MapPageRoute("", "folder/edit/{hash}", "~/folders/edit.aspx");
+
+        // folder delete
+        routes.MapPageRoute("", "folder/delete", "~/folders/delete.aspx");
+        routes.MapPageRoute("", "folder/delete/{hash}", "~/folders/delete.aspx");
 
         // form
         routes.MapPageRoute("", "form/index", "~/form/index.aspx");
@@ -46,12 +57,8 @@
         routes.MapPageRoute("", "form/edit", "~/form/edit.aspx");
         routes.MapPageRoute("", "form/edit/{id}", "~/form/edit.aspx");
 
-
         // configuration
         routes.MapPageRoute("", "configuration", "~/config.aspx");
-
-
-
 
 
         routes.MapPageRoute("", "form", "~/form/index.aspx");
