@@ -14,8 +14,7 @@
         <asp:Label runat="server" Text="color1"></asp:Label>
         <asp:TextBox ID="color2" Name="color2" runat="server"/>
         
-        <asp:Button ID="submit" OnClick="Edit" Text="Create" 
-                   runat="server" />
+        <asp:Button ID="submit" OnClick="Edit" Text="Create" runat="server" />
     </form>
 </asp:Content>
 
