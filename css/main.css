@@ -99,7 +99,10 @@ input{
     background-color: #333333;
     color: white;
 }
-
+.add{
+    font-size: 4em;
+    line-height: 200px;
+}
 input {
     border: 1px solid black;
 }
