@@ -50,7 +50,7 @@ public class Forms
     {
         exists(hash);
         access(hash, true);
-        var query = "UPDATE folders SET name = '" + name + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
+        var query = "UPDATE forma SET name = '" + name + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
         execute(query);
     }
 
@@ -59,27 +59,20 @@ public class Forms
         exists(hash);
         access(hash, false);
 
-        DataSet ds = getInfo(hash);
-        var id = ds.Tables[0].Rows[0].ItemArray[0];
-
-        //delete forms related to this folder
-        var query = "DELETE FROM forms WHERE folder_id = " + id + ";";
-        execute(query);
-
         // delete folder
-        query = "DELETE FROM folders WHERE hash = '" + hash + "';";
+        var query = "DELETE FROM forms WHERE hash = '" + hash + "';";
         execute(query);
     }
 
     public void exists(string hash)
     {
-        var query = "SELECT * FROM folders WHERE hash = '" + hash + "'";
+        var query = "SELECT * FROM forms WHERE hash = '" + hash + "'";
         Base conn = new Base();
         DataSet first = conn.getData(query);
 
         if (first.Tables[0].Rows.Count != 1)
         {
-            System.Web.HttpContext.Current.Response.Redirect("/folder/index");
+            Permissions.goBack();
         }
     }
 
@@ -109,7 +102,7 @@ public class Forms
 
     public void access(string hash, bool saveUrl)
     {
-        var query = "SELECT uf.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND f.hash = '" + hash + "'";
+        var query = "SELECT u.id FROM forms fo, folders f, users_folders uf WHERE fo.folder_id = fo.id AND f.id = uf.folder_id AND fo.hash = '" + hash + "'";
         var valid = false;
 
         Base conn = new Base();

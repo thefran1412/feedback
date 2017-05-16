@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-    edit
+    edit folder
     <form runat="server">
         <asp:Label runat="server" Text="name"></asp:Label>
         <asp:TextBox ID="name" Name="name" runat="server"/>
