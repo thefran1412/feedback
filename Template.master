@@ -13,24 +13,39 @@
 </head>
 <body>
     <header>
-        <form class="logo" id="form1" runat="server">
-
-             
-            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-
-              <asp:Label id="Label1" runat="server" />
-
-           </form>
+        
+        <a href="#" id="logo" >FeedBack</a>
         
         <ul>
-            <li><a href="/register">Sign Up</a></li>
-            <li><a href="/login">Log In</a></li>
+            <% if(1<=1) { %>
+
+                <li><a href="/register">Sign Up</a></li>
+                <li><a href="/login">Log In</a></li>
+            <% } %>
+            <% if(2<1) { %>
+                <li><a href="#" onclick="closeSession()" >Session Close</a></li>
+            <% } %>
         </ul>
     </header>
     <div class="content">
             <asp:ContentPlaceHolder id="content" runat="server">
             </asp:ContentPlaceHolder>
     </div>
-    
+    <script type="text/javascript"> 
+        var JavascriptBlah = '<%=Session["userId"]%>';
+
+        if (JavascriptBlah !== '') {
+            //document.getElementById("logo").setAttribute("href", "xyz.php");
+            document.getElementById("logo").href = "/folder/index"; 
+        } else {
+           // document.getElementById("logo").setAttribute("href", "xyz.php");
+            document.getElementById("logo").href = "/"; 
+        }
+
+        function closeSession() {
+            <%=Session["userId"]=""%>
+        }
+
+    </script>
 </body>
 </html>

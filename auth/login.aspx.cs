@@ -25,7 +25,7 @@ public partial class login_Default : System.Web.UI.Page
     public void Logon_Click(object sender, EventArgs e)
     {
 
-        cmd.CommandText = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'AND password='"+UserPass.Text+"'";
+        cmd.CommandText = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'AND password='" + UserPass.Text + "'";
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds, "reg");

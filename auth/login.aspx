@@ -3,6 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
+    <script type="text/javascript"> 
+        <%--var JavascriptBlah = '<%=Session["userId"]%>';
+
+        if (JavascriptBlah !== '') {
+            window.location.href = "/folder/index";
+        }--%>
+    </script>
     <div class="modal-body">
              <form id="form1" runat="server">
                 <h3>Logon Page</h3>
@@ -49,4 +56,5 @@
               </form>
         </div>
 </asp:Content>
+
 
