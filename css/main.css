@@ -20,6 +20,11 @@ header {
     top: 0;
 }
 
+#content_title{
+    position: absolute;
+    left: 40px;
+}
+
 .title{
     height: 30px;
     background-color: dimgrey;
@@ -64,8 +69,13 @@ input .login{
 input{
     border: 1px solid black;
 }
+.back{
 
-
+}
+.back img{
+    margin-top: 5px;
+    height: 20px;
+}
 /* FOLDERS */
 .folder {
     width: 200px;
@@ -81,6 +91,17 @@ input{
     color: black;
 }
 
+.add {
+    text-align: center;
+    background-color: #3c3c3c;
+    color: white;
+}
+
+.add span{
+    line-height: 200px;
+    font-size: 4em;
+    
+}
 input {
     border: 1px solid black;
 }

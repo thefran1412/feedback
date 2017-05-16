@@ -16,17 +16,6 @@ public partial class entity_index : System.Web.UI.Page
         Permissions p = new Permissions();
         p.set();
 
-        var state = "";
-        if(Session["userId"].ToString() == ""){
-            state = "empty";
-        }
-        else
-        {
-            state = "full";
-        }
-
-        var hola = state;
-
         // getting variable from url
         var id = Session["userId"].ToString();
         var query = "";

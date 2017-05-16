@@ -16,9 +16,10 @@ public partial class entity_view : System.Web.UI.Page
         {
             Permissions.goBack();
         }
+        
         // getting variable from url
         var hash = Page.RouteData.Values["hash"].ToString();
-
+        add_new.HRef = "/form/add/" + hash;
         // if there's an entry stay in page and continue, else go to page before this
         Permissions p = new Permissions();
         p.set();

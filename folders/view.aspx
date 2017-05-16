@@ -4,7 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     <div class="title">
-        FOLDER
+        <a class="back" href="/folder/index/">
+            <img src="/img/back.png"/>
+        </a>
+        <asp:Label ID="title" runat="server" Text="FOLDER"></asp:Label>
     </div>
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
@@ -15,4 +18,9 @@
             </a>
         </ItemTemplate>
     </asp:Repeater>
+    <a class="folderUrl" ID="add_new" runat="server" href="/form/add/">
+        <div class="folder add">    
+            <span>+</span>
+        </div>
+    </a>
 </asp:Content>
