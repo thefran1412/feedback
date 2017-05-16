@@ -20,6 +20,7 @@ public partial class index : System.Web.UI.Page
         var adios = hola.Tables["dades"];*/
         //ViewState["GoBackTo"] = Request.UrlReferrer;
 
+        if(Session["userId"] != null)
         Session["url"] = Request.Url.ToString();
     }
 }

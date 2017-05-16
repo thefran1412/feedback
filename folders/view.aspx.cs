@@ -12,6 +12,10 @@ public partial class entity_view : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Page.RouteData.Values["hash"] == null)
+        {
+            Permissions.goBack();
+        }
         // getting variable from url
         var hash = Page.RouteData.Values["hash"].ToString();
 
