@@ -51,7 +51,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="Button1" OnClick="Create" Text="Create"
+                    <asp:Button ID="Button1" OnClick="Edit" Text="Create"
                         runat="server" />
                 </td>
                 <td></td>
