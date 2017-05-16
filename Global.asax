@@ -51,11 +51,11 @@
 
         // form add
         routes.MapPageRoute("", "form/add", "~/form/add.aspx");
-        routes.MapPageRoute("", "form/add/{id}", "~/form/add.aspx");
+        routes.MapPageRoute("", "form/add/{hash}", "~/form/add.aspx");
 
         // form edit
         routes.MapPageRoute("", "form/edit", "~/form/edit.aspx");
-        routes.MapPageRoute("", "form/edit/{id}", "~/form/edit.aspx");
+        routes.MapPageRoute("", "form/edit/{hash}", "~/form/edit.aspx");
 
         // configuration
         routes.MapPageRoute("", "configuration", "~/config.aspx");
