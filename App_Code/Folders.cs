@@ -106,6 +106,16 @@ public class Folders
         return Convert.ToInt32(id);
     }
 
+    public string getHash(string id)
+    {
+        var query = "SELECT hash FROM folders WHERE id=" + id + ";";
+        Base conn = new Base();
+        DataSet ds = conn.getData(query);
+
+        var hash = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+        return hash;
+    }
+
     public void access(string hash, bool saveUrl)
     {
         var query = "SELECT uf.* FROM users_folders uf, folders f WHERE uf.folder_id = f.id AND f.hash = '" + hash + "'";

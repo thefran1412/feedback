@@ -3,7 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-    edit folder
+    <div class="title">
+        <a class="back" href="/folder/index/">
+            <img src="/img/back.png"/>
+        </a>
+        <asp:Label ID="title" runat="server" Text="EDIT FOLDER"></asp:Label>
+        <div class="actions">
+            <a id="delete" runat="server" href="/folder/delete/">Delete</a>
+        </div>
+    </div>
     <form runat="server">
         <table>
             <tr>
