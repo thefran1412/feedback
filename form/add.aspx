@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template.master" AutoEventWireup="true" CodeFile="add.aspx.cs" Inherits="form_add" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="/css/forms.css">
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/jqColorPicker.min.js"></script>
-    <script src="/js/forms.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="Server">
     add new form
@@ -37,7 +33,7 @@
                     <asp:TextBox CssClass="color" ID="color1" value="#89CAFF" runat="server" />
                 </td>
                 <td>
-                    <asp:Label ID="Label1" ForeColor="Red" runat="server"></asp:Label>
+                    <asp:Label ID="color1Label" ForeColor="Red" runat="server"></asp:Label>
                     <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="color1" runat="server" />
                 </td>
             </tr>
