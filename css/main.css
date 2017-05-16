@@ -16,8 +16,10 @@ header {
     height: 50px;
     width: 100%;
     position: fixed;
-    background: linear-gradient(to left, #1e5799, #7db9e8);
+    /*background: linear-gradient(to left, #1e5799, #7db9e8);*/
+    background-color: #333333;
     top: 0;
+    z-index: 10;
 }
 
 #content_title{
@@ -62,6 +64,7 @@ a {
 }
 .logo h2 {
     margin-bottom: 0;
+    margin-left: 5px;
 }
 input .login{
     background-color: aquamarine;
@@ -93,10 +96,13 @@ input{
 
 .add {
     text-align: center;
-    background-color: #3c3c3c;
+    background-color: #333333;
     color: white;
 }
-
+.add{
+    font-size: 4em;
+    line-height: 200px;
+}
 input {
     border: 1px solid black;
 }
