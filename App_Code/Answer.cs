@@ -14,7 +14,7 @@ public class Answer
         exists(hash);
         access(hash, true);
 
-        var query = "SELECT * FROM answers WHERE hash='" + hash + "';";
+        var query = "SELECT * FROM forms WHERE hash='" + hash + "';";
         Base conn = new Base();
         DataSet ds = conn.getData(query);
 
@@ -33,18 +33,37 @@ public class Answer
         return ds;
     }
 
-    public void add(string name, string color1, string color2, string folder_hash)
-    {
-        var hashed = hash(name);
-        Folders f = new Folders();
-        DataSet ds = f.getInfo(folder_hash);
 
-        var folder_id = ds.Tables[0].Rows[0].ItemArray[0];
+
+
+
+
+
+    public void add(string answer, string name, int rating, string hash)
+    {
+        Answer answer2 = new Answer();
+        DataSet ds = answer2.getInfo(hash);
+
+        var getFormId = ds.Tables[0].Rows[0].ItemArray[0];
 
         // insert folders table
-        var query = "INSERT INTO forms (name, color1, color2, hash, visible, folder_id) VALUES('" + name + "', '" + color1 + "', '" + color2 + "', '" + hashed + "', 1, " + folder_id + ");";
+        var query = "INSERT INTO answers (form_id, name, rating, answer) VALUES('" + getFormId + "', '" + name + "', '" + rating + "', '" + answer + "');";
         execute(query);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void edit(string name, string color1, string color2, string hash)
     {

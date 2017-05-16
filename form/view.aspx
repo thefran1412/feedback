@@ -6,7 +6,11 @@
     Pregunta: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
+
                 <div class="answer" >
+                    <div>
+                        <span>Nom de la persona que a respost:</span><asp:Label ID="Label1" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+                    </div>
                     <div>
                         <span>Puntuació sobre 5:</span><asp:Label ID="data" runat="server" Text='<%#Eval("rating") %>'></asp:Label>
                     </div>

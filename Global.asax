@@ -65,6 +65,10 @@
         routes.MapPageRoute("", "form/delete", "~/form/delete.aspx");
         routes.MapPageRoute("", "form/delete/{hash}", "~/form/delete.aspx");
 
+        // answer
+        routes.MapPageRoute("", "form/answer", "~/form/answer_view.aspx");
+        routes.MapPageRoute("", "form/answer/{hash}", "~/form/answer_view.aspx");
+
         // configuration
         routes.MapPageRoute("", "configuration", "~/config.aspx");
 
