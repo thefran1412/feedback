@@ -14,7 +14,12 @@
 <body>
     <header>
         
-        <a href="#" id="logo" >FeedBack</a>
+        <% if(Session["userId"] == "") { %>
+            <a href="/" class="logo"><h2>FeedBack</h2></a>
+        <% } %>
+        <% if(Session["userId"] != "") { %>
+            <a href="/folder/index" class="logo" ><h2>FeedBack</h2></a>
+        <% } %>
         
         <ul>
             <% if(Session["userId"] == "") { %>
