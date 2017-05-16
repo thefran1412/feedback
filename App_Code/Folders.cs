@@ -14,7 +14,19 @@ public class Folders
         exists(hash);
         access(hash, true);
 
-        var query = "SELECT * FROM folders WHERE hash='"+hash+"';";
+        var query = "SELECT * FROM folders WHERE hash='" + hash + "';";
+        Base conn = new Base();
+        DataSet ds = conn.getData(query);
+
+        return ds;
+    }
+
+    public DataSet getForms(string hash)
+    {
+        exists(hash);
+        access(hash, true);
+
+        var query = "SELECT fo.* FROM forms fo, folders f WHERE fo.folder_id = f.id AND f.hash='" + hash + "';";
         Base conn = new Base();
         DataSet ds = conn.getData(query);
 
@@ -52,7 +64,16 @@ public class Folders
     {
         exists(hash);
         access(hash, false);
-        var query = "DELETE FROM folders WHERE hash = '" + hash + "';";
+
+        DataSet ds = getInfo(hash);
+        var id = ds.Tables[0].Rows[0].ItemArray[0];
+
+        //delete forms related to this folder
+        var query = "DELETE FROM forms WHERE folder_id = " + id + ";";
+        execute(query);
+
+        // delete folder
+        query = "DELETE FROM folders WHERE hash = '" + hash + "';";
         execute(query);
     }
 

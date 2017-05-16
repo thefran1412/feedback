@@ -10,7 +10,7 @@ using db;
 
     public class Permissions
     {
-        public void set(int count)
+        public void set()
         {
             var session = System.Web.HttpContext.Current.Session;
 
@@ -18,12 +18,6 @@ using db;
             if (session["userId"] == null)
             {
                 System.Web.HttpContext.Current.Response.Redirect("/login");
-            }
-
-            // if the thing looking for doesn't exist
-            if (count <= 0)
-            {
-                goBack();
             }
         }
 

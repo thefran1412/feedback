@@ -15,10 +15,14 @@ public partial class folders_edit : System.Web.UI.Page
     {
         hash = Page.RouteData.Values["hash"].ToString();
 
+        Permissions p = new Permissions();
+        p.set();
+
         Folders folder = new Folders();
         DataSet ds = folder.getInfo(hash);
 
         var data = ds.Tables[0].Rows[0];
+
         if (!Page.IsPostBack)
         {
             name.Text = data.ItemArray[1].ToString();

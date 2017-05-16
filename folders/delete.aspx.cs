@@ -12,7 +12,7 @@ public partial class folders_delete : System.Web.UI.Page
         var hash = Page.RouteData.Values["hash"].ToString();
 
         Permissions p = new Permissions();
-        p.set(1);
+        p.set();
 
         Folders folder = new Folders();
         folder.delete(hash);
