@@ -6,7 +6,7 @@
     <script type="text/javascript"> 
         <%--var JavascriptBlah = '<%=Session["userId"]%>';
 
-        if (JavascriptBlah !== '') {
+        if (JavascriptBlah != '') {
             window.location.href = "/folder/index";
         }--%>
     </script>

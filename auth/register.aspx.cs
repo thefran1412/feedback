@@ -19,6 +19,8 @@ public partial class login_Default : System.Web.UI.Page
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
+                    var prueba = HashStrings.GetHashedString(txtPassword.Text.Trim());
+
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());

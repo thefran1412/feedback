@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Configuration;
+using db;
 
 public partial class login_Default : System.Web.UI.Page
 {
@@ -24,8 +25,8 @@ public partial class login_Default : System.Web.UI.Page
 
     public void Logon_Click(object sender, EventArgs e)
     {
-
-        cmd.CommandText = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'AND password='" + UserPass.Text + "'";
+        var userPass = HashStrings.GetHashedString(UserPass.Text);
+        cmd.CommandText = "SELECT * FROM users WHERE email = '" + UserEmail.Text + "'AND password='" + userPass + "'";
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds, "reg");
@@ -37,6 +38,8 @@ public partial class login_Default : System.Web.UI.Page
             string userId = ds.Tables[0].Rows[0].ItemArray[0].ToString();
 
             Session["userId"] = userId;
+
+            Response.Redirect("/folder/index");
 
         }
         else
