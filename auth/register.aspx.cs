@@ -19,6 +19,7 @@ public partial class login_Default : System.Web.UI.Page
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
+
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                     cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
@@ -30,6 +31,9 @@ public partial class login_Default : System.Web.UI.Page
                     con.Open();
                     userId = Convert.ToInt32(cmd.ExecuteScalar());
                     con.Close();
+
+                    Session["userId"] = userId;
+                    Response.Redirect("/folder/index");
                 }
             }
             string message = string.Empty;
