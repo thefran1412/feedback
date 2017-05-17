@@ -6,13 +6,21 @@
     Pregunta: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
 
     Question: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+
     <form runat="server">
+        
         <asp:Label runat="server" Text="name2">Name</asp:Label>
         <asp:TextBox ID="Name2" runat="server"/>
         <asp:Label runat="server" Text="answer1">Answer</asp:Label>
         <asp:TextBox ID="answer1" runat="server"/>
         <asp:Label runat="server" Text="rating">Rating</asp:Label>
-        <asp:TextBox ID="rating" runat="server"/>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:ListItem Value="1">1</asp:ListItem>
+            <asp:ListItem Value="2">2</asp:ListItem>
+            <asp:ListItem Value="3">3</asp:ListItem>
+            <asp:ListItem Value="4">4</asp:ListItem>
+            <asp:ListItem Value="5">5</asp:ListItem>
+        </asp:DropDownList>
         <asp:Button ID="submit" OnClick="Create" Text="Send" 
                    runat="server" />
     </form>

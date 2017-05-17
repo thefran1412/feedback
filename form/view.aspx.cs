@@ -47,7 +47,9 @@ public partial class form_view : System.Web.UI.Page
     protected void Create(object sender, EventArgs e)
     {
         Answer answer = new Answer();
-        int x = Int32.Parse(rating.Text);
-        answer.add(answer1.Text, Name2.Text, x, Page.RouteData.Values["hash"].ToString());
+        int number = Int32.Parse(DropDownList1.SelectedValue);
+        answer.add(answer1.Text, Name2.Text, number, Page.RouteData.Values["hash"].ToString());
+        string urlRedirect = "/form/view/" + Page.RouteData.Values["hash"];
+        Response.Redirect(urlRedirect);
     }
 }
