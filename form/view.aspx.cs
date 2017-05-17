@@ -45,16 +45,7 @@ public partial class form_view : System.Web.UI.Page
 
 
         var raiting3 = raitingA.Tables[0].Rows[0];
-        if (raiting3 != null)
-        {
-            //rating.Text = ItemArrayraiting3[0].ToString().Substring(0, 4);
-            rating.Text = raiting3.ItemArray[0].ToString().Substring(0, 4);
-        }
-        if(raiting3 == null)
-        {
-            rating.Text = "0";
-        }
-        
+        rating.Text = raiting3.ItemArray[0].ToString();
 
 
     }
