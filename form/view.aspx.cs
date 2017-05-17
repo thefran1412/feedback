@@ -25,6 +25,7 @@ public partial class form_view : System.Web.UI.Page
         // set info to variable
         var data = first.Tables[0].Rows[0].ItemArray;
         title.Text = data[2].ToString();
+        conttent.Style.Add("background", "linear-gradient(to right, "+data[4].ToString()+" ,"+data[5].ToString()+" );");
 
         Answer answer = new Answer();
         DataSet answers = answer.getAnswers(hash);
