@@ -21,6 +21,17 @@ public class Forms
         return ds;
     }
 
+    public DataSet getInfoPublic(string hash)
+    {
+        exists(hash);
+
+        var query = "SELECT * FROM forms WHERE hash='" + hash + "';";
+        Base conn = new Base();
+        DataSet ds = conn.getData(query);
+
+        return ds;
+    }
+
     public DataSet getAnswers(string hash)
     {
         exists(hash);

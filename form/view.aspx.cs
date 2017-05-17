@@ -20,11 +20,11 @@ public partial class form_view : System.Web.UI.Page
         var hash = Page.RouteData.Values["hash"].ToString();
 
         // if there's an entry stay in page and continue, else go to page before this
-        Permissions p = new Permissions();
-        p.set();
+        //Permissions p = new Permissions();
+        //p.set();
 
         Forms form = new Forms();
-        DataSet first = form.getInfo(hash);
+        DataSet first = form.getInfoPublic(hash);
         
         // set info to variable
         var data = first.Tables[0].Rows[0].ItemArray;
