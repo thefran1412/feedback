@@ -13,28 +13,18 @@
         </div>
     </div>
     <form runat="server">
-        <table>
+        <table class="inputs">
             <tr>
                 <td>
                     Name Of the folder:
                 </td>
                 <td>
-                    <asp:TextBox ID="name" runat="server" />
+                    <asp:TextBox ID="name" runat="server" class="input"/>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="name" runat="server" />
                 </td>
             </tr>
-<%--            <tr>
-                <td>Add a Description:
-                </td>
-                <td>
-                    <asp:TextBox ID="Description" TextMode="multiline" Columns="50" Rows="5" runat="server" />
-                </td>
-                <td>
-                    <asp:Label ID="DescriptionLabel" ForeColor="Red" runat="server"></asp:Label>
-                </td>
-            </tr>--%>
             <tr>
                 <td>Choose main Color:
                 </td>

@@ -13,12 +13,12 @@
         </div>
     </div>
     <form runat="server">
-        <table>
+        <table class="inputs">
             <tr>
                 <td>What do you want to be evaluated?
                 </td>
                 <td>
-                    <asp:TextBox ID="question" runat="server" />
+                    <asp:TextBox ID="question" class="input" runat="server" />
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="question" runat="server" />
@@ -28,7 +28,7 @@
                 <td>Add a Description:
                 </td>
                 <td>
-                    <asp:TextBox ID="Description" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                    <asp:TextBox ID="Description" CssClass="input" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </td>
                 <td>
                 </td>
