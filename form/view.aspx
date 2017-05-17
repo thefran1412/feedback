@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     <div class="title">
         <asp:Label ID="title" runat="server" Text="Label"></asp:Label>
+        <div class="actions"> Average: <asp:Label ID="rating" runat="server" Text="Rating"></asp:Label></div>
     </div>
     <div id="conttent" runat="server" style="min-height: calc(100% - 22px);">   
         <div class="response">
@@ -33,13 +34,13 @@
 
                     <div class="answer" >
                         <div>
-                            <span>Nom de la persona que a respost:</span><asp:Label ID="Label1" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+                            <span>Name:</span><asp:Label ID="Label1" runat="server" Text='<%#Eval("name") %>'></asp:Label>
                         </div>
                         <div>
-                            <span>Puntuació sobre 5:</span><asp:Label ID="data" runat="server" Text='<%#Eval("rating") %>'></asp:Label>
+                            <span>Rating:</span><asp:Label ID="data" runat="server" Text='<%#Eval("rating") %>'></asp:Label>
                         </div>
                         <div>
-                            <span>Resposta:</span><asp:Label ID="data2" runat="server" Text='<%#Eval("answer") %>'></asp:Label>
+                            <span>Answer:</span><asp:Label ID="data2" runat="server" Text='<%#Eval("answer") %>'></asp:Label>
                         </div>
                     </div>
             </ItemTemplate>
