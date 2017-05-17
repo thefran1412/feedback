@@ -71,4 +71,9 @@ public partial class form_view : System.Web.UI.Page
         answer1.Text = "";
         DropDownList1.SelectedValue = "";
     }
+
+    protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+
+    }
 }

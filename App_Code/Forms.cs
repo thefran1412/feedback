@@ -57,11 +57,11 @@ public class Forms
         execute(query);
     }
 
-    public void edit(string name, string description, string color1, string color2, string hash)
+    public void edit(string name, int visible, string description, string color1, string color2, string hash)
     {
         exists(hash);
         access(hash, true);
-        var query = "UPDATE forms SET name = '" + name + "', description = '" + description + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
+        var query = "UPDATE forms SET name = '" + name + "', visible="+visible+",description = '" + description + "', color1 = '" + color1 + "', color2 = '" + color2 + "' WHERE hash = '" + hash + "';";
         execute(query);
     }
 
