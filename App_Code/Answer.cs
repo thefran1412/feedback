@@ -35,9 +35,10 @@ public class Answer
 
     //SELECT avg(a.rating) FROM answers as a
 
-    public DataSet averageRating()
+    public DataSet averageRating(string hash)
     {
-        var query = "SELECT avg(a.rating) FROM answers as a";
+        //var query = "SELECT a.* FROM forms fo, answers a WHERE a.form_id = fo.id AND fo.hash='" + hash + "';";
+        var query = "SELECT avg(a.rating) FROM forms fo, answers a WHERE a.form_id = fo.id AND fo.hash='" + hash + "';";
         Base conn = new Base();
         DataSet ds = conn.getData(query);
 
