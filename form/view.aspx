@@ -3,10 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-    Pregunta: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+    
+    
 
-    Question: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    <div class="title">
+        <a id="back" class="back" href="/folder/index/">
+            <img src="/img/back.png"/>
+        </a>
+        <asp:Label ID="title" runat="server" Text="Label"></asp:Label>
+    </div>
+    
 
+   
     <form runat="server">
         
         <asp:Label runat="server" Text="name2">Name</asp:Label>

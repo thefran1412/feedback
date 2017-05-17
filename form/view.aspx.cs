@@ -24,7 +24,7 @@ public partial class form_view : System.Web.UI.Page
         
         // set info to variable
         var data = first.Tables[0].Rows[0].ItemArray;
-        name.Text = data[2].ToString();
+        title.Text = data[2].ToString();
 
         Answer answer = new Answer();
         DataSet answers = answer.getAnswers(hash);
@@ -36,7 +36,7 @@ public partial class form_view : System.Web.UI.Page
         DataSet ds = anwer.getInfo(hash);
 
         var data2 = ds.Tables[0].Rows[0].ItemArray;
-        name.Text = data2[2].ToString();
+        title.Text = data2[2].ToString();
 
     }
 
