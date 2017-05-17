@@ -4,6 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     Pregunta: <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+
+    Question: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    <form runat="server">
+        <asp:Label runat="server" Text="name2">Name</asp:Label>
+        <asp:TextBox ID="Name2" runat="server"/>
+        <asp:Label runat="server" Text="answer1">Answer</asp:Label>
+        <asp:TextBox ID="answer1" runat="server"/>
+        <asp:Label runat="server" Text="rating">Rating</asp:Label>
+        <asp:TextBox ID="rating" runat="server"/>
+        <asp:Button ID="submit" OnClick="Create" Text="Send" 
+                   runat="server" />
+    </form>
+
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
 
