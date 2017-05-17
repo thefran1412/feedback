@@ -50,7 +50,7 @@ public partial class login_Default : System.Web.UI.Page
         }
         else
         {
-            Msg.Text = "Password o email mal introduit.";
+            Msg.Text = "Incorrect email or password.";
         }
     }
 }

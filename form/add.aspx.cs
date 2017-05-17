@@ -31,8 +31,9 @@ public partial class form_add : System.Web.UI.Page
             if (color2.Text != "" ||
             MatchString(pattern, color2.Text))
             {
+                int visible = Int32.Parse(DropDownList1.SelectedValue);
                 Forms form = new Forms();
-                form.add(question.Text, Description.Text, color1.Text, color2.Text, hash);
+                form.add(question.Text, Description.Text, color1.Text, color2.Text, visible, hash);
                 Response.Redirect("/folder/view/" + hash);
             }
             else

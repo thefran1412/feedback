@@ -53,6 +53,15 @@
                 </td>
             </tr>
             <tr>
+                <td>Choose visibility</td>
+                <td>
+                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="input">
+                        <asp:ListItem Value="0">Non visible</asp:ListItem>
+                        <asp:ListItem Value="1">Visible</asp:ListItem>
+                </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
                 <td></td>
                 <td>
                     <asp:Button ID="submit" OnClick="Create" Text="Create"

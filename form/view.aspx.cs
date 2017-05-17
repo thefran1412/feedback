@@ -12,6 +12,9 @@ public partial class form_view : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        rating.Text = "";
+
         if (Page.RouteData.Values["hash"] == null)
         {
             Permissions.goBack();
@@ -38,6 +41,14 @@ public partial class form_view : System.Web.UI.Page
 
         var data2 = ds.Tables[0].Rows[0].ItemArray;
         title.Text = data2[2].ToString();
+
+        Answer raiting = new Answer();
+        DataSet raitingA = raiting.averageRating(hash);
+
+
+        var raiting3 = raitingA.Tables[0].Rows[0].ItemArray;
+        rating.Text = raiting3[0].ToString().Substring(0, 4);
+
 
     }
 

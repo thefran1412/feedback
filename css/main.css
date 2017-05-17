@@ -202,3 +202,27 @@ input {
     padding: 4px;
     border-radius: 3px;
 }
+.submit {
+    background-color: #333;
+    padding: 4px;
+    width: 80px;
+    border-radius: 3px;
+    color: white;
+}
+
+/* LOGIN & REGISTER */
+.wrapper{
+    color: black;
+}
+
+.wrapper table{
+    margin: 0 auto;
+}
+
+.wrapper h2{
+    color: #333333;
+}
+.wrapper table tbody tr {
+    padding: 10px;
+    height: 40px
+}

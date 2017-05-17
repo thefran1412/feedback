@@ -44,7 +44,7 @@ public class Forms
         return ds;
     }
 
-    public void add(string name, string description,  string color1, string color2, string folder_hash)
+    public void add(string name, string description,  string color1, string color2, int visible, string folder_hash)
     {
         var hashed = hash(name);
         Folders f = new Folders();
@@ -53,7 +53,7 @@ public class Forms
         var folder_id = ds.Tables[0].Rows[0].ItemArray[0];
 
         // insert folders table
-        var query = "INSERT INTO forms (name, description, color1, color2, hash, visible, folder_id) VALUES('" + name + "', '" + description + "', '" + color1 + "', '" + color2 + "', '" + hashed + "', 1, " + folder_id + ");";
+        var query = "INSERT INTO forms (name, description, color1, color2, hash, visible, folder_id) VALUES('" + name + "', '" + description + "', '" + color1 + "', '" + color2 + "', '" + hashed + "', "+ visible +", " + folder_id + ");";
         execute(query);
     }
 
