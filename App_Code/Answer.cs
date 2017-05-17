@@ -33,12 +33,6 @@ public class Answer
         return ds;
     }
 
-
-
-
-
-
-
     public void add(string answer, string name, int rating, string hash)
     {
         Answer answer2 = new Answer();
