@@ -19,10 +19,6 @@ public partial class form_view : System.Web.UI.Page
         // getting variable from url
         var hash = Page.RouteData.Values["hash"].ToString();
 
-        // if there's an entry stay in page and continue, else go to page before this
-        //Permissions p = new Permissions();
-        //p.set();
-
         Forms form = new Forms();
         DataSet first = form.getInfoPublic(hash);
         
@@ -49,5 +45,9 @@ public partial class form_view : System.Web.UI.Page
         Answer answer = new Answer();
         int x = Int32.Parse(rating.Text);
         answer.add(answer1.Text, Name2.Text, x, Page.RouteData.Values["hash"].ToString());
+
+        Name2.Text = "";
+        answer1.Text = "";
+        rating.Text = "";
     }
 }
