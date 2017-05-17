@@ -25,7 +25,7 @@
                     <asp:ListItem Value="4">4</asp:ListItem>
                     <asp:ListItem Value="5">5</asp:ListItem>
                 </asp:DropDownList>
-                <asp:Button ID="submit" OnClick="Create" Text="Send" runat="server" CssClass="input"/>
+                <asp:Button ID="submit" OnClick="Create" Text="Send" runat="server" CssClass="submit"/>
             </form>
         </div>
 
