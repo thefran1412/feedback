@@ -20,6 +20,7 @@ public partial class folders_edit : System.Web.UI.Page
         }
 
         hash = Page.RouteData.Values["hash"].ToString();
+        delete.HRef = "/folder/view/" + hash;
 
         Permissions p = new Permissions();
         p.set();

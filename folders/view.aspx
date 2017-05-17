@@ -17,7 +17,6 @@
         <ItemTemplate>
             
                 <div class="folder" style="background: linear-gradient(to right, <%#Eval("color1") %> , <%#Eval("color2") %>);">
-
                     <a class="folderUrl" href="/form/view/<%#Eval("hash") %>">
                         <asp:Label ID="data" runat="server" Text='<%#Eval("name") %>'></asp:Label>
                     </a>

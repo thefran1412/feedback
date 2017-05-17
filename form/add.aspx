@@ -3,14 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="Server">
-    add new form
+    <div class="title">
+        <a class="back" id="back" runat="server" href="/folder/index/">
+            <img src="/img/back.png"/>
+        </a>
+        <asp:Label ID="title" runat="server" Text="CREATE FORM"></asp:Label>
+    </div>
     <form runat="server">
-        <table>
+        <table class="inputs">
             <tr>
                 <td>What do you want to be evaluated?
                 </td>
                 <td>
-                    <asp:TextBox ID="question" runat="server" />
+                    <asp:TextBox ID="question" runat="server" class="input" />
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="question" runat="server" />
@@ -20,7 +25,7 @@
                 <td>Add a Description:
                 </td>
                 <td>
-                    <asp:TextBox ID="Description" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                    <asp:TextBox ID="Description" TextMode="multiline" Columns="50" Rows="5" runat="server" class="input"/>
                 </td>
                 <td>
                     <asp:Label ID="DescriptionLabel" ForeColor="Red" runat="server"></asp:Label>

@@ -19,12 +19,8 @@ public partial class form_view : System.Web.UI.Page
         // getting variable from url
         var hash = Page.RouteData.Values["hash"].ToString();
 
-        // if there's an entry stay in page and continue, else go to page before this
-        Permissions p = new Permissions();
-        p.set();
-
         Forms form = new Forms();
-        DataSet first = form.getInfo(hash);
+        DataSet first = form.getInfoPublic(hash);
         
         // set info to variable
         var data = first.Tables[0].Rows[0].ItemArray;
@@ -51,5 +47,9 @@ public partial class form_view : System.Web.UI.Page
         answer.add(answer1.Text, Name2.Text, number, Page.RouteData.Values["hash"].ToString());
         string urlRedirect = "/form/view/" + Page.RouteData.Values["hash"];
         Response.Redirect(urlRedirect);
+
+        Name2.Text = "";
+        answer1.Text = "";
+        DropDownList1.SelectedValue = "";
     }
 }

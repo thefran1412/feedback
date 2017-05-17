@@ -11,8 +11,10 @@
         
         <asp:Label runat="server" Text="name2">Name</asp:Label>
         <asp:TextBox ID="Name2" runat="server"/>
+       
         <asp:Label runat="server" Text="answer1">Answer</asp:Label>
         <asp:TextBox ID="answer1" runat="server"/>
+        
         <asp:Label runat="server" Text="rating">Rating</asp:Label>
         <asp:DropDownList ID="DropDownList1" runat="server">
             <asp:ListItem Value="1">1</asp:ListItem>
