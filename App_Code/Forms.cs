@@ -57,7 +57,7 @@ public class Forms
         execute(query);
     }
 
-    public void edit(string name, string description, string color1, string color2, string hash)
+    public void edit(string name, int visible, string description, string color1, string color2, string hash)
     {
         exists(hash);
         access(hash, true);

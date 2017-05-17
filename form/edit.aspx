@@ -55,6 +55,19 @@
                 </td>
             </tr>
             <tr>
+                <td>
+                    <asp:Label runat="server" Text="rating">This Form is public:</asp:Label>
+                </td>
+                <td>
+                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="input">
+                    <asp:ListItem Value="1">Visible</asp:ListItem>
+                    <asp:ListItem Value="2">Invisible</asp:ListItem>
+                </asp:DropDownList>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
                 <td></td>
                 <td>
                     <asp:Button ID="Button1" OnClick="Edit" Text="Create"
