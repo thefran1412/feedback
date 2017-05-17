@@ -39,8 +39,15 @@ public partial class form_edit : System.Web.UI.Page
             Description.Text = data.ItemArray[7].ToString();
             color1.Text = data.ItemArray[4].ToString();
             color2.Text = data.ItemArray[5].ToString();
-            String visible_box = data.ItemArray[3].ToString();
-            DropDownList1.SelectedValue = visible_box;
+
+            if (data.ItemArray[3].ToString() == "True")
+            {
+                DropDownList1.SelectedValue = "1";
+            }
+            else
+            {
+                DropDownList1.SelectedValue = "0";
+            }
         }
     }
     protected void Edit(object sender, EventArgs e)
