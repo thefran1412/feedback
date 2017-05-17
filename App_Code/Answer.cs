@@ -33,6 +33,17 @@ public class Answer
         return ds;
     }
 
+    //SELECT avg(a.rating) FROM answers as a
+
+    public DataSet averageRating()
+    {
+        var query = "SELECT avg(a.rating) FROM answers as a";
+        Base conn = new Base();
+        DataSet ds = conn.getData(query);
+
+        return ds;
+    }
+
     public void add(string answer, string name, int rating, string hash)
     {
         Answer answer2 = new Answer();

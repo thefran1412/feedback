@@ -39,6 +39,14 @@ public partial class form_view : System.Web.UI.Page
         var data2 = ds.Tables[0].Rows[0].ItemArray;
         title.Text = data2[2].ToString();
 
+        Answer raiting = new Answer();
+        DataSet raitingA = raiting.averageRating();
+
+
+        var raiting3 = raitingA.Tables[0].Rows[0].ItemArray;
+        rating.Text = raiting3[0].ToString();
+
+
     }
 
     protected void Create(object sender, EventArgs e)
