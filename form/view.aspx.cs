@@ -47,7 +47,7 @@ public partial class form_view : System.Web.UI.Page
 
 
         var raiting3 = raitingA.Tables[0].Rows[0].ItemArray;
-        rating.Text = raiting3[0].ToString();
+        rating.Text = raiting3[0].ToString().Substring(0, 4);
 
 
     }

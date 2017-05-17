@@ -38,7 +38,7 @@ public class Answer
     public DataSet averageRating(string hash)
     {
         //var query = "SELECT a.* FROM forms fo, answers a WHERE a.form_id = fo.id AND fo.hash='" + hash + "';";
-        var query = "SELECT avg(a.rating) FROM forms fo, answers a WHERE a.form_id = fo.id AND fo.hash='" + hash + "';";
+        var query = "SELECT AVG(CONVERT(DECIMAL(10,2),a.rating)) FROM forms fo, answers a WHERE a.form_id = fo.id AND fo.hash='" + hash + "';";
         Base conn = new Base();
         DataSet ds = conn.getData(query);
 
