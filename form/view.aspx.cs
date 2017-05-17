@@ -36,5 +36,18 @@ public partial class form_view : System.Web.UI.Page
         Repeater1.DataSource = answers;
         Repeater1.DataBind();
 
+        Answer anwer = new Answer();
+        DataSet ds = anwer.getInfo(hash);
+
+        var data2 = ds.Tables[0].Rows[0].ItemArray;
+        name.Text = data2[2].ToString();
+
+    }
+
+    protected void Create(object sender, EventArgs e)
+    {
+        Answer answer = new Answer();
+        int x = Int32.Parse(rating.Text);
+        answer.add(answer1.Text, Name2.Text, x, Page.RouteData.Values["hash"].ToString());
     }
 }

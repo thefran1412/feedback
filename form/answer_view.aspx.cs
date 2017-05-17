@@ -32,5 +32,7 @@ public partial class form_answer_view : System.Web.UI.Page
         Answer answer = new Answer();
         int x = Int32.Parse(rating.Text);
         answer.add(answer1.Text, Name2.Text, x , Page.RouteData.Values["hash"].ToString());
+        string urlRedirect = "/form/view/" + Page.RouteData.Values["hash"];
+        Response.Redirect(urlRedirect);
     }
 }
