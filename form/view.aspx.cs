@@ -19,16 +19,13 @@ public partial class form_view : System.Web.UI.Page
         // getting variable from url
         var hash = Page.RouteData.Values["hash"].ToString();
 
-        // if there's an entry stay in page and continue, else go to page before this
-        Permissions p = new Permissions();
-        p.set();
-
         Forms form = new Forms();
-        DataSet first = form.getInfo(hash);
+        DataSet first = form.getInfoPublic(hash);
         
         // set info to variable
         var data = first.Tables[0].Rows[0].ItemArray;
-        name.Text = data[2].ToString();
+        title.Text = data[2].ToString();
+        conttent.Style.Add("background", "linear-gradient(to right, "+data[4].ToString()+" ,"+data[5].ToString()+" );");
 
         Answer answer = new Answer();
         DataSet answers = answer.getAnswers(hash);
@@ -40,14 +37,20 @@ public partial class form_view : System.Web.UI.Page
         DataSet ds = anwer.getInfo(hash);
 
         var data2 = ds.Tables[0].Rows[0].ItemArray;
-        name.Text = data2[2].ToString();
+        title.Text = data2[2].ToString();
 
     }
 
     protected void Create(object sender, EventArgs e)
     {
         Answer answer = new Answer();
-        int x = Int32.Parse(rating.Text);
-        answer.add(answer1.Text, Name2.Text, x, Page.RouteData.Values["hash"].ToString());
+        int number = Int32.Parse(DropDownList1.SelectedValue);
+        answer.add(answer1.Text, Name2.Text, number, Page.RouteData.Values["hash"].ToString());
+        string urlRedirect = "/form/view/" + Page.RouteData.Values["hash"];
+        Response.Redirect(urlRedirect);
+
+        Name2.Text = "";
+        answer1.Text = "";
+        DropDownList1.SelectedValue = "";
     }
 }

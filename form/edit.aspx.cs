@@ -18,6 +18,7 @@ public partial class form_edit : System.Web.UI.Page
             Permissions.goBack();
         }
         hash = Page.RouteData.Values["hash"].ToString();
+        delete.HRef = "/form/delete/" + hash;
 
         Permissions p = new Permissions();
         p.set();
@@ -26,6 +27,11 @@ public partial class form_edit : System.Web.UI.Page
         DataSet ds = form.getInfo(hash);
 
         var data = ds.Tables[0].Rows[0];
+
+        // Get folder's hash
+        Folders folder = new Folders();
+        var folder_hash = folder.getHash(data.ItemArray[1].ToString());
+        back.HRef = "/folder/view/" + folder_hash;
 
         if (!Page.IsPostBack)
         {

@@ -45,20 +45,6 @@ public class Answer
         execute(query);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void edit(string name, string color1, string color2, string hash)
     {
         exists(hash);
@@ -115,25 +101,8 @@ public class Answer
 
     public void access(string hash, bool saveUrl)
     {
-        var query = "SELECT uf.* FROM forms fo, folders f, users_folders uf WHERE fo.folder_id = f.id AND f.id = uf.folder_id AND fo.hash = '" + hash + "'";
-        var valid = false;
+        var valid = true;
 
-        Base conn = new Base();
-        DataSet first = conn.getData(query);
-
-        for (int i = 0; i < first.Tables[0].Rows.Count; i++)
-        {
-            var data = first.Tables[0].Rows[i].ItemArray;
-            var val = data[1].ToString();
-
-            var user_id = System.Web.HttpContext.Current.Session["userId"].ToString();
-
-            if (user_id == val)
-            {
-                valid = true;
-            }
-
-        }
         if (valid == false)
         {
             Permissions.goBack();

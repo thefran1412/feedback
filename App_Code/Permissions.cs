@@ -15,7 +15,7 @@ using db;
             var session = System.Web.HttpContext.Current.Session;
 
             // if needs to be logged and it's not redirect
-            if (session["userId"] == null)
+            if (session["userId"] == null || session["userId"] == "")
             {
                 System.Web.HttpContext.Current.Response.Redirect("/login");
             }

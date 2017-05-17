@@ -16,6 +16,8 @@ public partial class form_add : System.Web.UI.Page
 
         hash = Page.RouteData.Values["hash"].ToString();
 
+        back.HRef = "/folder/view/" + hash;
+
     }
 
     protected void Create(object sender, EventArgs e)
